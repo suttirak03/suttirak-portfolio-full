@@ -1,0 +1,2960 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>สุทธิรักษ์ ศรีดำ | แฟ้มสะสมผลงาน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#0A1730;
+    --navy-900:#0F2049;
+    --navy-800:#152C61;
+    --navy-700:#1D3C7E;
+    --royal:#2955A6;
+    --gold:#C9A227;
+    --gold-light:#E8C766;
+    --teal:#2AA9A0;
+    --cream:#F7F2E4;
+    --cream-2:#EFE7D0;
+    --paper:#FFFDF8;
+    --ink:#182338;
+    --ink-soft:#4B5673;
+    --line:#E4DCC4;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Sarabun',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4,.display{
+    font-family:'Kanit',sans-serif;
+    margin:0;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:'Kanit',sans-serif;
+    font-size:13px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;height:2px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  .section{padding:96px 0;}
+  .section.alt{background:var(--cream);}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-title{font-size:clamp(28px,4vw,40px);font-weight:700;color:var(--navy-900);margin-top:10px;line-height:1.25;}
+  .section-sub{font-size:16.5px;color:var(--ink-soft);margin-top:14px;line-height:1.75;}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(28px) rotateX(6deg) scale(.98);transition:opacity .8s cubic-bezier(.19,1,.22,1),transform .8s cubic-bezier(.19,1,.22,1);transform-origin:50% 100%;will-change:transform,opacity;}
+  .reveal.in{opacity:1;transform:translateY(0) rotateX(0) scale(1);}
+  .work-grid.reveal.in .work-card,
+  .leader-grid.reveal.in .leader-card,
+  .doc-grid.reveal.in .doc-card,
+  .role-list.reveal.in .role-card{ animation:cardPop .7s cubic-bezier(.19,1,.22,1) backwards; }
+  .work-grid.reveal.in .work-card:nth-child(1),.leader-grid.reveal.in .leader-card:nth-child(1){animation-delay:.03s;}
+  .work-grid.reveal.in .work-card:nth-child(2),.leader-grid.reveal.in .leader-card:nth-child(2){animation-delay:.09s;}
+  .work-grid.reveal.in .work-card:nth-child(3),.leader-grid.reveal.in .leader-card:nth-child(3){animation-delay:.15s;}
+  .work-grid.reveal.in .work-card:nth-child(4),.leader-grid.reveal.in .leader-card:nth-child(4){animation-delay:.21s;}
+  .work-grid.reveal.in .work-card:nth-child(5),.leader-grid.reveal.in .leader-card:nth-child(5){animation-delay:.27s;}
+  .work-grid.reveal.in .work-card:nth-child(6){animation-delay:.33s;}
+  .work-grid.reveal.in .work-card:nth-child(n+7){animation-delay:.36s;}
+  @keyframes cardPop{
+    from{opacity:0;transform:translateY(18px) scale(.96);}
+    to{opacity:1;transform:translateY(0) scale(1);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .work-grid.reveal.in .work-card,.leader-grid.reveal.in .leader-card,.doc-grid.reveal.in .doc-card,.role-list.reveal.in .role-card{animation:none;}
+    html{scroll-behavior:auto;}
+    .deco-orb,.deco-icon,.section-blob{animation:none !important;}
+  }
+
+  /* ===== NAV ===== */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(10,23,48,0.0);
+    transition:background .35s ease, box-shadow .35s ease, backdrop-filter .35s ease;
+    padding:18px 0;
+  }
+  header.nav.scrolled{
+    background:rgba(10,23,48,0.92);
+    backdrop-filter:blur(8px);
+    box-shadow:0 6px 24px rgba(0,0,0,.18);
+    padding:12px 0;
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+  .nav-brand{font-family:'Kanit',sans-serif;color:#fff;font-weight:600;font-size:15px;letter-spacing:.03em;display:flex;align-items:center;gap:10px;}
+  .nav-brand .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);}
+  nav.links{display:flex;gap:28px;}
+  nav.links a{
+    color:rgba(255,255,255,.82);
+    text-decoration:none;
+    font-size:14.5px;
+    font-weight:500;
+    position:relative;
+    padding-bottom:4px;
+  }
+  nav.links a:hover{color:#fff;}
+  nav.links a::after{
+    content:"";position:absolute;left:0;bottom:0;height:2px;width:0;
+    background:var(--gold);transition:width .25s ease;
+  }
+  nav.links a:hover::after{width:100%;}
+  .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;}
+  @media (max-width:880px){
+    nav.links{
+      position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;
+      background:var(--navy-950);
+      flex-direction:column;
+      padding:100px 32px 32px;
+      gap:22px;
+      transform:translateX(100%);
+      transition:transform .35s ease;
+    }
+    nav.links.open{transform:translateX(0);}
+    .nav-toggle{display:block;z-index:110;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:radial-gradient(ellipse at 20% 0%, #1a3a7a 0%, var(--navy-900) 45%, var(--navy-950) 100%);
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    padding-top:110px;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(201,162,39,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,162,39,.05) 1px, transparent 1px);
+    background-size:44px 44px;
+    mask-image:linear-gradient(to bottom, transparent, black 20%, black 70%, transparent);
+  }
+  .hero-grid{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.15fr .85fr;
+    gap:20px;align-items:end;
+    width:100%;
+  }
+  .hero-ribbon{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(42,169,160,.14);
+    border:1px solid rgba(42,169,160,.45);
+    color:var(--teal);
+    font-family:'Kanit',sans-serif;
+    font-size:13px;font-weight:600;letter-spacing:.05em;
+    padding:7px 16px;border-radius:99px;
+    margin-bottom:26px;
+  }
+  .hero-ribbon svg{width:14px;height:14px;fill:var(--teal);}
+  .hero h1{
+    color:#fff;font-weight:800;
+    font-size:clamp(38px,5.6vw,64px);
+    line-height:1.08;
+    letter-spacing:-.01em;
+  }
+  .hero h1 .en{
+    display:block;font-size:.32em;font-weight:400;color:var(--gold-light);
+    font-family:'Kanit',sans-serif;letter-spacing:.16em;margin-top:14px;text-transform:uppercase;
+  }
+  .hero-degree{
+    margin-top:22px;font-size:18px;color:rgba(255,255,255,.86);line-height:1.6;max-width:480px;
+  }
+  .hero-degree strong{color:#fff;}
+  .hero-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;}
+  .hbadge{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.16);
+    padding:10px 16px;border-radius:10px;
+    font-size:13.5px;color:#fff;
+    display:flex;align-items:center;gap:8px;
+  }
+  .hbadge b{color:var(--gold-light);font-family:'Kanit',sans-serif;}
+  .hero-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Kanit',sans-serif;font-weight:600;font-size:14.5px;
+    padding:13px 26px;border-radius:10px;
+    text-decoration:none;cursor:pointer;border:none;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#1a1300;box-shadow:0 10px 26px -8px rgba(201,162,39,.55);}
+  .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);}
+
+  .hero-portrait-wrap{
+    position:relative;z-index:2;
+    display:flex;justify-content:center;align-items:flex-end;
+    height:100%;
+  }
+  .hero-portrait{
+    position:relative;
+    width:min(92%,380px);
+    border-radius:22px 22px 0 0;
+    overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.6);
+    transition:transform .25s cubic-bezier(.22,1,.36,1);
+    will-change:transform;
+  }
+  .hero-portrait img{width:100%;display:block;}
+  .hero-portrait::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(10,23,48,.55), transparent 40%);
+  }
+  .ribbon-seal{
+    position:absolute;
+    right:-10px;top:24px;
+    width:78px;height:78px;
+    background:conic-gradient(from 210deg, var(--gold-light), var(--gold), var(--gold-light));
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 30px -8px rgba(201,162,39,.6);
+    z-index:3;
+  }
+  .ribbon-seal span{
+    font-family:'Kanit',sans-serif;font-weight:700;font-size:11px;
+    color:#241a00;text-align:center;line-height:1.25;
+    width:56px;
+  }
+  .scroll-hint{
+    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+    z-index:3;color:rgba(255,255,255,.55);font-size:12px;
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+    font-family:'Kanit',sans-serif;letter-spacing:.1em;
+  }
+  .scroll-hint .line{width:1px;height:34px;background:linear-gradient(to bottom, rgba(255,255,255,.7), transparent);animation:scrolldown 1.8s infinite;}
+  @keyframes scrolldown{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+
+  @media (max-width:880px){
+    .hero-grid{grid-template-columns:1fr;text-align:center;}
+    .hero-degree{margin-left:auto;margin-right:auto;}
+    .hero-badges,.hero-cta{justify-content:center;}
+    .hero-portrait{width:70%;margin-top:36px;}
+    .hero-portrait-wrap{order:-1;}
+  }
+
+  /* ===== ABOUT ===== */
+  .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start;}
+  .about-card{
+    background:var(--navy-900);
+    border-radius:20px;
+    padding:8px;
+    position:sticky;top:110px;
+  }
+  .about-photo{
+    border-radius:14px;overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+  }
+  .about-photo img{width:100%;}
+  .about-info{padding:22px 14px 10px;}
+  .about-info .name{color:#fff;font-family:'Kanit',sans-serif;font-weight:600;font-size:20px;}
+  .about-info .role{color:var(--gold-light);font-size:13.5px;margin-top:4px;font-family:'Kanit',sans-serif;}
+  .about-contact{margin-top:18px;display:flex;flex-direction:column;gap:10px;}
+  .about-contact a,.about-contact div{
+    display:flex;align-items:center;gap:10px;
+    color:rgba(255,255,255,.85);font-size:13.5px;text-decoration:none;
+  }
+  .about-contact svg{width:16px;height:16px;flex:none;fill:var(--teal);}
+
+  .info-table{border-collapse:collapse;width:100%;}
+  .info-table tr{border-bottom:1px solid var(--line);}
+  .info-table tr:last-child{border-bottom:none;}
+  .info-table td{padding:12px 4px;font-size:15px;vertical-align:top;}
+  .info-table td:first-child{color:var(--ink-soft);width:34%;font-weight:500;}
+  .info-table td:last-child{color:var(--ink);font-weight:500;}
+
+  .subhead{
+    font-family:'Kanit',sans-serif;font-weight:600;font-size:18px;
+    color:var(--navy-800);margin:34px 0 16px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .subhead:first-child{margin-top:0;}
+  .subhead svg{width:19px;height:19px;fill:var(--gold);}
+
+  .chip-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{
+    background:var(--cream-2);
+    border:1px solid var(--line);
+    color:var(--navy-800);
+    font-size:13.5px;font-weight:500;
+    padding:9px 15px;border-radius:99px;
+  }
+  .chip.strong{background:var(--navy-800);color:#fff;border-color:var(--navy-800);}
+
+  .skill-block{margin-bottom:26px;}
+  .skill-block p.desc{color:var(--ink-soft);font-size:14.5px;margin:8px 0 12px;line-height:1.7;}
+
+  .tool-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .tool-pill{
+    background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:8px 14px;font-size:13px;font-weight:600;color:var(--navy-800);
+    font-family:'Kanit',sans-serif;
+  }
+
+  /* ===== TIMELINE (education) ===== */
+  .timeline{position:relative;padding-left:34px;}
+  .timeline::before{
+    content:"";position:absolute;left:8px;top:6px;bottom:6px;width:3px;
+    background:linear-gradient(to bottom, var(--gold), var(--teal));
+    border-radius:3px;
+  }
+  .tl-item{position:relative;padding-bottom:38px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-dot{
+    position:absolute;left:-34px;top:2px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--gold);
+  }
+  .tl-item.grad .tl-dot{border-color:var(--teal);}
+  .tl-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:22px 24px;
+  }
+  .tl-year{font-family:'Kanit',sans-serif;color:var(--gold);font-weight:600;font-size:13px;letter-spacing:.05em;}
+  .tl-title{font-family:'Kanit',sans-serif;font-weight:600;font-size:19px;color:var(--navy-900);margin-top:6px;}
+  .tl-place{color:var(--ink-soft);font-size:14.5px;margin-top:6px;}
+  .tl-gpa{
+    display:inline-block;margin-top:12px;
+    background:var(--cream-2);color:var(--navy-800);
+    font-size:13px;font-weight:600;padding:5px 12px;border-radius:8px;
+  }
+  .tl-honor{
+    display:inline-block;margin-top:12px;margin-left:8px;
+    background:var(--teal);color:#fff;
+    font-size:13px;font-weight:600;padding:5px 12px;border-radius:8px;
+  }
+
+  /* ===== DOCUMENT SHOWCASE ===== */
+  .doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  .doc-card{
+    background:var(--navy-900);border-radius:18px;overflow:hidden;
+    display:grid;grid-template-columns:1fr 1.15fr;
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .doc-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -18px rgba(15,32,73,.5);}
+  .doc-thumb{overflow:hidden;background:#000;}
+  .doc-thumb img{width:100%;height:100%;object-fit:cover;opacity:.88;}
+  .doc-text{padding:24px 22px;color:#fff;}
+  .doc-text .eyebrow{color:var(--teal);margin-bottom:10px;}
+  .doc-text .eyebrow::before{background:var(--teal);}
+  .doc-text h4{font-size:17px;font-weight:600;line-height:1.4;}
+  .doc-text p{font-size:13px;color:rgba(255,255,255,.68);margin-top:8px;line-height:1.6;}
+  .doc-text .view{margin-top:14px;font-size:12.5px;color:var(--gold-light);font-family:'Kanit',sans-serif;font-weight:600;display:flex;align-items:center;gap:6px;}
+  @media (max-width:700px){.doc-grid{grid-template-columns:1fr;} .doc-card{grid-template-columns:1fr;} .doc-thumb{height:180px;}}
+
+  /* ===== GALLERY / MASONRY ===== */
+  .gal-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;}
+  .gal-tab{
+    font-family:'Kanit',sans-serif;font-size:13.5px;font-weight:600;
+    padding:9px 18px;border-radius:99px;border:1px solid var(--line);
+    background:#fff;color:var(--ink-soft);cursor:pointer;transition:.2s ease;
+  }
+  .gal-tab.active{background:var(--navy-800);color:#fff;border-color:var(--navy-800);}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .gal-item{
+    border-radius:14px;overflow:hidden;position:relative;cursor:pointer;
+    border:1px solid var(--line);background:#fff;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .gal-item:hover{transform:translateY(-4px);box-shadow:0 18px 34px -16px rgba(15,32,73,.35);}
+  .gal-item img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;}
+  .gal-cap{padding:12px 14px 16px;}
+  .gal-cap .t{font-size:13.5px;font-weight:600;color:var(--navy-900);line-height:1.5;font-family:'Kanit',sans-serif;}
+  .gal-cap .s{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+  .gal-item.hidden{display:none;}
+  @media (max-width:880px){.gallery{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.gallery{grid-template-columns:1fr;}}
+
+  /* ===== WORK GRID (training cards w/ carousel) ===== */
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .work-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .work-card:hover{transform:translateY(-3px);box-shadow:0 16px 30px -16px rgba(15,32,73,.3);}
+  .work-card.hidden{display:none;}
+  .work-carousel{position:relative;aspect-ratio:4/3;overflow:hidden;background:#0A1730;}
+  .work-carousel img{width:100%;height:100%;object-fit:cover;object-position:top;display:none;cursor:pointer;}
+  .work-carousel img.active{display:block;}
+  .wc-btn{
+    position:absolute;top:50%;transform:translateY(-50%);
+    background:rgba(10,23,48,.72);color:#fff;
+    border:2px solid rgba(255,255,255,.85);
+    width:38px;height:38px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;font-size:20px;line-height:1;z-index:3;
+    box-shadow:0 4px 14px rgba(0,0,0,.35);
+    transition:background .2s ease, border-color .2s ease, transform .2s ease;
+  }
+  .wc-btn:hover{background:var(--gold);border-color:var(--gold);color:#1a1300;transform:translateY(-50%) scale(1.08);}
+  .wc-prev{left:10px;} .wc-next{right:10px;}
+  .wc-dots{
+    position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
+    display:flex;gap:6px;z-index:3;
+    background:rgba(10,23,48,.45);padding:6px 9px;border-radius:99px;
+  }
+  .wc-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;transition:background .2s ease, width .2s ease;box-shadow:0 0 0 1px rgba(0,0,0,.15);}
+  .wc-dot.active{background:var(--gold-light);width:16px;border-radius:3px;}
+  .wc-count{position:absolute;top:8px;right:8px;background:rgba(10,23,48,.72);border:1px solid rgba(255,255,255,.5);color:#fff;font-size:11px;font-family:'Kanit',sans-serif;font-weight:600;padding:3px 10px;border-radius:99px;z-index:3;}
+  .work-body{padding:16px 18px 20px;}
+  .work-date{font-family:'Kanit',sans-serif;font-size:11.5px;font-weight:600;color:var(--gold);letter-spacing:.02em;}
+  .work-title{font-family:'Kanit',sans-serif;font-weight:600;font-size:15px;color:var(--navy-900);margin-top:6px;line-height:1.5;}
+  .work-desc{font-size:13px;color:var(--ink-soft);margin-top:6px;line-height:1.7;}
+  @media (max-width:880px){.work-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.work-grid{grid-template-columns:1fr;}}
+
+  /* ===== FEATURE / ACHIEVEMENT CARDS ===== */
+  .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .feat-card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  }
+  .feat-img{aspect-ratio:16/10;overflow:hidden;}
+  .feat-img img{width:100%;height:100%;object-fit:cover;object-position:top;}
+  .feat-body{padding:22px 24px 26px;}
+  .feat-tag{font-family:'Kanit',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);}
+  .feat-title{font-family:'Kanit',sans-serif;font-weight:600;font-size:17.5px;color:var(--navy-900);margin-top:8px;line-height:1.5;}
+  .feat-desc{font-size:14px;color:var(--ink-soft);margin-top:10px;line-height:1.75;}
+  @media (max-width:780px){.feat-grid{grid-template-columns:1fr;}}
+
+  /* ===== ROLE CARDS (leadership) ===== */
+  .role-list{display:flex;flex-direction:column;gap:18px;}
+  .role-card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:26px 28px;display:grid;grid-template-columns:220px 1fr;gap:26px;
+  }
+  .role-org{font-family:'Kanit',sans-serif;}
+  .role-org .yr{color:var(--gold);font-weight:600;font-size:13px;}
+  .role-org .ttl{color:var(--navy-900);font-weight:700;font-size:18px;margin-top:6px;line-height:1.4;}
+  .role-org .org{color:var(--ink-soft);font-size:13.5px;margin-top:8px;}
+  .role-duties{display:flex;flex-direction:column;gap:9px;}
+  .role-duties li{list-style:none;font-size:14.5px;color:var(--ink);line-height:1.6;padding-left:20px;position:relative;}
+  .role-duties li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;background:var(--teal);transform:rotate(45deg);}
+  @media (max-width:720px){.role-card{grid-template-columns:1fr;}}
+
+  /* ===== LEADER CARDS (carousel + role info) ===== */
+  .leader-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
+  .leader-card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .leader-card:hover{transform:translateY(-3px);box-shadow:0 16px 30px -16px rgba(15,32,73,.3);}
+  .leader-card .work-carousel{aspect-ratio:16/9;}
+  .leader-card .role-org{padding:22px 24px 0;}
+  .leader-card .role-duties{padding:14px 24px 24px;}
+  @media (max-width:900px){.leader-grid{grid-template-columns:1fr;}}
+
+  /* ===== PRACTICUM (teaching) accordion ===== */
+  .prac-list{display:flex;flex-direction:column;gap:16px;}
+  .prac-item{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;}
+  .prac-head{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:22px 26px;cursor:pointer;
+  }
+  .prac-head-left{display:flex;align-items:center;gap:18px;}
+  .prac-num{
+    font-family:'Kanit',sans-serif;font-weight:700;font-size:15px;color:var(--navy-800);
+    background:var(--cream-2);width:40px;height:40px;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .prac-head .yr{font-family:'Kanit',sans-serif;color:var(--gold);font-size:12.5px;font-weight:600;}
+  .prac-head .school{font-family:'Kanit',sans-serif;font-weight:600;font-size:16.5px;color:var(--navy-900);margin-top:3px;}
+  .prac-chevron{transition:transform .25s ease;flex:none;color:var(--ink-soft);}
+  .prac-item.open .prac-chevron{transform:rotate(180deg);}
+  .prac-body{
+    max-height:0;overflow:hidden;transition:max-height .35s ease;
+  }
+  .prac-item.open .prac-body{max-height:1300px;}
+  .prac-inner{padding:0 26px 26px;}
+  .prac-inner ul{margin:0 0 18px;padding-left:20px;color:var(--ink);font-size:14.5px;line-height:1.8;}
+  .prac-photos{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+  .prac-photos img{width:100%;aspect-ratio:1/1;border-radius:10px;object-fit:cover;object-position:top;cursor:pointer;transition:transform .2s ease;}
+  .prac-photos img:hover{transform:scale(1.04);}
+  @media (max-width:880px){.prac-photos{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:480px){.prac-photos{grid-template-columns:repeat(2,1fr);}}
+
+  /* ===== CONTACT / FOOTER ===== */
+  .footer{
+    background:var(--navy-950);color:#fff;padding:90px 0 34px;position:relative;overflow:hidden;
+  }
+  .footer::before{
+    content:"";position:absolute;top:-120px;right:-120px;width:340px;height:340px;border-radius:50%;
+    background:radial-gradient(circle, rgba(201,162,39,.18), transparent 70%);
+  }
+  .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;position:relative;z-index:2;}
+  .footer h2{color:#fff;font-size:clamp(28px,4vw,38px);font-weight:700;line-height:1.3;}
+  .footer p.lead{color:rgba(255,255,255,.65);margin-top:16px;font-size:15px;line-height:1.8;max-width:440px;}
+  .footer-contacts{display:flex;flex-direction:column;gap:16px;margin-top:30px;}
+  .footer-contacts a{
+    display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-size:15px;
+  }
+  .footer-contacts svg{width:18px;height:18px;fill:var(--gold-light);}
+  .footer-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:26px;}
+  .footer-card .lbl{font-family:'Kanit',sans-serif;color:var(--gold-light);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+  .footer-card table{width:100%;margin-top:14px;border-collapse:collapse;}
+  .footer-card td{padding:8px 0;font-size:14px;color:rgba(255,255,255,.82);border-bottom:1px solid rgba(255,255,255,.08);}
+  .footer-card tr:last-child td{border-bottom:none;}
+  .footer-card td:first-child{color:rgba(255,255,255,.5);width:40%;}
+  .footer-bottom{
+    margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:12.5px;color:rgba(255,255,255,.4);position:relative;z-index:2;
+  }
+  @media (max-width:780px){.footer-grid{grid-template-columns:1fr;}}
+
+  /* ===== LIGHTBOX ===== */
+  .lightbox{
+    position:fixed;inset:0;background:rgba(6,12,28,.92);
+    display:none;align-items:center;justify-content:center;z-index:1000;
+    padding:40px 20px;backdrop-filter:blur(4px);
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:min(900px,92vw);max-height:86vh;border-radius:10px;box-shadow:0 30px 70px rgba(0,0,0,.5);}
+  .lightbox-close{
+    position:absolute;top:24px;right:28px;color:#fff;font-size:32px;
+    background:none;border:none;cursor:pointer;line-height:1;
+    width:44px;height:44px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.08);
+  }
+  .lightbox-cap{
+    position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+    color:rgba(255,255,255,.75);font-size:13.5px;text-align:center;max-width:600px;
+  }
+
+
+  /* ===== IMAGE FULLSCREEN HINT ===== */
+  .tap-hint{
+    position:absolute;top:10px;left:10px;z-index:8;
+    display:inline-flex;align-items:center;gap:5px;
+    padding:5px 9px;border-radius:999px;
+    background:rgba(10,23,48,.42);
+    color:rgba(255,255,255,.76);
+    font-family:'Kanit',sans-serif;font-size:11px;font-weight:400;
+    line-height:1;letter-spacing:.01em;
+    border:1px solid rgba(255,255,255,.10);
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    pointer-events:none;user-select:none;
+    backdrop-filter:blur(3px);
+    -webkit-backdrop-filter:blur(3px);
+  }
+  .tap-hint::before{content:'▧';font-size:11px;line-height:1;opacity:.78;}
+  .work-carousel,.doc-card{position:relative;}
+  .tap-image-wrap{position:relative;min-width:0;}
+  .tap-image-wrap img{display:block;width:100%;}
+  @media (max-width:520px){
+    .tap-hint{
+      top:8px;left:8px;padding:4px 7px;font-size:9.5px;
+      background:rgba(10,23,48,.38);
+      color:rgba(255,255,255,.72);
+      border-color:rgba(255,255,255,.08);
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+    }
+    .tap-hint::before{font-size:10px;}
+  }
+
+  ::selection{background:var(--gold);color:#20180a;}
+  .fine-print{font-size:12.5px;color:var(--ink-soft);margin-top:10px;}
+
+  /* ===== SCROLL PROGRESS BAR ===== */
+  .scroll-progress{
+    position:fixed;top:0;left:0;height:3px;width:0%;
+    background:linear-gradient(90deg,var(--teal),var(--gold-light),var(--gold));
+    z-index:200;transition:width .1s linear;
+    box-shadow:0 0 8px rgba(201,162,39,.6);
+  }
+
+  /* ===== 3D FLOAT CARDS (steady lift on hover, no mouse tracking) ===== */
+  .tilt-3d{
+    transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease;
+    will-change:transform;
+  }
+  .tilt-3d:hover{
+    transform:translateY(-8px);
+    box-shadow:0 22px 40px -18px rgba(15,32,73,.4);
+  }
+
+  /* ===== SECTION DECORATIVE BACKGROUNDS ===== */
+  .section{position:relative;isolation:isolate;}
+  .section .wrap{position:relative;z-index:2;}
+  #education::before,#achievements::before,#teaching::before{
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background-image:radial-gradient(rgba(201,162,39,.10) 1.4px, transparent 1.4px);
+    background-size:34px 34px;
+    mask-image:radial-gradient(ellipse 60% 45% at 85% 0%, black, transparent 70%);
+  }
+  #training::before,#leadership::before,#community::before{
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background-image:radial-gradient(rgba(42,169,160,.09) 1.4px, transparent 1.4px);
+    background-size:34px 34px;
+    mask-image:radial-gradient(ellipse 55% 40% at 8% 100%, black, transparent 70%);
+  }
+  .section-blob{
+    position:absolute;z-index:0;pointer-events:none;border-radius:50%;filter:blur(60px);
+    animation:decoFloat 26s ease-in-out infinite alternate;
+  }
+  @keyframes decoFloat{
+    0%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(18px,-24px) scale(1.08);}
+    100%{transform:translate(-14px,14px) scale(.96);}
+  }
+  #education .section-blob{width:340px;height:340px;top:-80px;right:-100px;background:radial-gradient(circle,rgba(201,162,39,.16),transparent 70%);}
+  #achievements .section-blob{width:300px;height:300px;bottom:-60px;left:-90px;background:radial-gradient(circle,rgba(42,169,160,.14),transparent 70%);animation-duration:20s;}
+  #leadership .section-blob{width:320px;height:320px;top:10%;right:-110px;background:radial-gradient(circle,rgba(201,162,39,.13),transparent 70%);animation-duration:24s;}
+  #teaching .section-blob{width:360px;height:360px;bottom:-100px;right:-80px;background:radial-gradient(circle,rgba(42,169,160,.12),transparent 70%);animation-duration:19s;}
+  #community .section-blob{width:280px;height:280px;top:-60px;left:-90px;background:radial-gradient(circle,rgba(201,162,39,.14),transparent 70%);animation-duration:21s;}
+
+  /* ===== NAV SCROLLSPY ===== */
+  nav.links a.active{color:#fff;}
+  nav.links a.active::after{width:100%;}
+
+  /* ===== BUTTON SHINE SWEEP ===== */
+  .btn{position:relative;overflow:hidden;}
+  .btn::before{
+    content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+    background:linear-gradient(115deg,transparent,rgba(255,255,255,.35),transparent);
+    transform:skewX(-20deg);transition:left .6s ease;
+  }
+  .btn:hover::before{left:120%;}
+
+  /* ===== HERO DECORATIVE LAYER ===== */
+  .hero-deco{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;}
+  .hero-deco .deco-orb-gold{
+    position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;
+    animation:decoFloat 22s ease-in-out infinite alternate;
+    width:420px;height:420px;top:-120px;right:-100px;
+    background:radial-gradient(circle,rgba(201,162,39,.30),transparent 70%);
+  }
+  .hero-deco .deco-orb-teal{
+    position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;
+    animation:decoFloat 26s ease-in-out infinite alternate;
+    width:380px;height:380px;bottom:-140px;left:-120px;
+    background:radial-gradient(circle,rgba(42,169,160,.24),transparent 70%);
+  }
+  .deco-icon{position:absolute;opacity:.16;color:var(--gold-light);animation:decoDrift 16s ease-in-out infinite alternate;}
+  .deco-icon.teal{color:var(--teal);}
+  .deco-icon svg{display:block;width:100%;height:100%;}
+  @keyframes decoDrift{
+    0%{transform:translateY(0) rotate(0deg);}
+    50%{transform:translateY(-16px) rotate(4deg);}
+    100%{transform:translateY(10px) rotate(-3deg);}
+  }
+  .di-1{width:86px;height:86px;top:14%;left:6%;animation-duration:15s;}
+  .di-2{width:64px;height:64px;top:66%;left:11%;animation-duration:19s;animation-delay:-4s;}
+  .di-3{width:70px;height:70px;top:8%;left:52%;animation-duration:17s;animation-delay:-2s;}
+  .di-4{width:56px;height:56px;top:80%;left:44%;animation-duration:14s;animation-delay:-6s;}
+  .di-5{width:96px;height:96px;top:40%;left:2%;animation-duration:21s;animation-delay:-8s;}
+  @media (max-width:880px){
+    .deco-icon{display:none;}
+    .hero-deco .deco-orb-gold{width:280px;height:280px;}
+    .hero-deco .deco-orb-teal{width:260px;height:260px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .deco-orb-gold,.deco-orb-teal,.deco-icon,.section-blob{animation:none !important;}
+    .tilt-3d{transition:none !important;}
+  }
+
+/* ===== MOBILE FULL-WIDTH FIX ===== */
+html,body{width:100%;max-width:100%;overflow-x:hidden;}
+body{-webkit-text-size-adjust:100%;}
+@media (max-width:880px){
+  .wrap{width:100%;max-width:none;padding-left:18px;padding-right:18px;}
+  .section{padding:68px 0;}
+  .section-head{margin-bottom:30px;}
+  .section-title{font-size:clamp(26px,7vw,34px);}
+  .section-sub{font-size:15px;line-height:1.7;}
+
+  /* header */
+  header.nav{padding:12px 0;}
+  header.nav.scrolled{padding:10px 0;}
+  .nav-brand{font-size:14px;max-width:calc(100% - 54px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .nav-toggle{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:25px;padding:0;}
+  nav.links{width:min(86vw,340px);padding:88px 24px 28px;}
+  nav.links a{font-size:16px;padding:9px 0;}
+
+  /* hero: use the whole mobile width, no desktop proportions */
+  .hero{min-height:100svh;height:auto;padding-top:92px;padding-bottom:58px;display:block;}
+  .hero-grid{width:100%;display:flex;flex-direction:column;gap:0;text-align:center;}
+  .hero-copy{width:100%;}
+  .hero-ribbon{font-size:11px;padding:7px 12px;margin-bottom:18px;max-width:100%;}
+  .hero h1{font-size:clamp(34px,10.5vw,48px);line-height:1.12;overflow-wrap:anywhere;}
+  .hero h1 .en{font-size:.36em;margin-top:9px;letter-spacing:.11em;}
+  .hero-degree{font-size:15px;line-height:1.65;margin-top:16px;max-width:none;}
+  .hero-badges{display:grid;grid-template-columns:1fr;gap:8px;margin-top:20px;}
+  .hbadge{justify-content:center;font-size:12.5px;padding:9px 11px;min-width:0;}
+  .hero-cta{display:grid;grid-template-columns:1fr;gap:10px;margin-top:24px;}
+  .btn{width:100%;justify-content:center;padding:13px 18px;min-height:48px;}
+  .hero-portrait-wrap{order:0;width:100%;margin-top:28px;}
+  .hero-portrait{width:min(78vw,300px);max-width:100%;margin:0 auto;border-radius:18px 18px 0 0;}
+  .ribbon-seal{width:64px;height:64px;right:-6px;top:16px;}
+  .ribbon-seal span{font-size:9px;width:46px;}
+  .scroll-hint{display:none;}
+
+  /* content grids become full-width single columns */
+  .about-grid,.feat-grid,.footer-grid,.role-card,.leader-grid{grid-template-columns:1fr;}
+  .about-grid{gap:28px;}
+  .about-card{position:relative;top:auto;width:100%;}
+  .about-content{width:100%;min-width:0;}
+  .info-table{font-size:14px;table-layout:fixed;}
+  .info-table td{overflow-wrap:anywhere;word-break:break-word;}
+  .info-table td:first-child{width:36%;}
+
+  .timeline{padding-left:28px;}
+  .timeline-item{min-width:0;}
+  .timeline-item .date{font-size:12px;}
+
+  .doc-grid,.work-grid{grid-template-columns:1fr;gap:18px;}
+  .doc-card{grid-template-columns:1fr;}
+  .doc-thumb{height:190px;}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+  .work-card{min-width:0;}
+  .feat-grid{gap:18px;}
+  .feat-card{min-width:0;}
+  .role-card{gap:18px;padding:22px 18px;}
+  .prac-photos{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+
+  /* prevent long text / media from creating a wider page */
+  img,svg,video,canvas,iframe{max-width:100%;}
+  pre,code{white-space:pre-wrap;overflow-wrap:anywhere;}
+  a,p,h1,h2,h3,h4,td,th,li,span,div{overflow-wrap:break-word;}
+
+  /* lightbox fits the phone */
+  .lightbox{padding:16px;}
+  .lightbox img{max-width:94vw;max-height:78svh;}
+
+  /* footer */
+  .footer{padding-bottom:42px;}
+  .footer-card{width:100%;overflow:hidden;}
+  .footer-card table{table-layout:fixed;font-size:13px;}
+  .footer-card td{overflow-wrap:anywhere;word-break:break-word;}
+}
+@media (max-width:480px){
+  .wrap{padding-left:14px;padding-right:14px;}
+  .section{padding:58px 0;}
+  .hero{padding-top:84px;padding-bottom:46px;}
+  .hero h1{font-size:clamp(32px,10.8vw,43px);}
+  .hero-degree{font-size:14px;}
+  .gallery{grid-template-columns:1fr 1fr;}
+  .section-head{margin-bottom:24px;}
+}
+
+</style>
+
+<style id="mobile-image-reliability-fix">
+@media (max-width: 880px) {
+  /* Preserve the existing visual design; only prevent cards from staying
+     permanently hidden on mobile when an observer misses an intersection. */
+  .reveal { will-change: opacity, transform; }
+  .work-carousel img { content-visibility: auto; }
+}
+</style>
+
+
+<style id="mobile-training-school-activity-image-fix">
+@media (max-width: 880px) {
+  /* Fix cards in the training/professional-development and school-activity sections.
+     Preserve the existing card appearance and carousel effects. */
+  .work-grid img,
+  .doc-grid img,
+  .role-list img,
+  .work-card img,
+  .doc-card img,
+  .role-card img {
+    max-width: 100%;
+  }
+
+  /* If a card itself is revealed, don't let an image remain hidden because
+     of a delayed/missed reveal state on mobile. */
+  .work-card.in img,
+  .doc-card.in img,
+  .role-card.in img {
+    visibility: visible;
+  }
+}
+</style>
+
+
+<style id="mobile-gallery-reveal-final-fix">
+@media (max-width: 880px) {
+  /* The affected gallery containers must never remain in the initial
+     .reveal { opacity:0 } state on mobile. The existing cardPop animation
+     remains active once .in is applied. */
+  #training .work-grid,
+  #training #schoolactivities ~ .work-grid {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <div class="nav-brand"><span class="dot"></span> สุทธิรักษ์ ศรีดำ</div>
+    <button class="nav-toggle" id="navToggle" aria-label="เปิดเมนู">☰</button>
+    <nav class="links" id="navLinks">
+      <a href="#about">ประวัติส่วนตัว</a>
+      <a href="#education">การศึกษา</a>
+      <a href="#training">การอบรม</a>
+      <a href="#achievements">ผลงาน</a>
+      <a href="#leadership">บทบาทผู้นำ</a>
+      <a href="#teaching">งานสอน</a>
+      <a href="#community">จิตอาสา</a>
+      <a href="#contact">ติดต่อ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-deco" aria-hidden="true">
+    <div class="deco-orb-gold"></div>
+    <div class="deco-orb-teal"></div>
+    <div class="deco-icon di-1">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 5c2-1 5-1 7 0v14c-2-1-5-1-7 0V5z"/>
+        <path d="M21 5c-2-1-5-1-7 0v14c2-1 5-1 7 0V5z"/>
+      </svg>
+    </div>
+    <div class="deco-icon teal di-2">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3 2 8l10 5 10-5-10-5z"/>
+        <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/>
+        <path d="M22 8v6"/>
+      </svg>
+    </div>
+    <div class="deco-icon di-3">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 21l3.6-.9L20 6.7a1.5 1.5 0 0 0 0-2.1l-1.6-1.6a1.5 1.5 0 0 0-2.1 0L2.9 17.4 2 21z"/>
+        <path d="M14.5 5 19 9.5"/>
+      </svg>
+    </div>
+    <div class="deco-icon teal di-4">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16v12H8l-4 4V4z"/>
+        <path d="M7 8h10M7 11h6"/>
+      </svg>
+    </div>
+    <div class="deco-icon di-5">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2l2.9 6.26L21 9.27l-4.5 4.39L17.8 20 12 16.9 6.2 20l1.3-6.34L3 9.27l6.1-1.01L12 2z"/>
+      </svg>
+    </div>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal in">
+      <div class="hero-ribbon">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.39L17.8 20 12 16.9 6.2 20l1.3-6.34L3 9.27l6.1-1.01L12 2z"/></svg>
+        แฟ้มสะสมผลงาน · PORTFOLIO 2569
+      </div>
+      <h1>
+        นายสุทธิรักษ์ ศรีดำ
+        <span class="en">Suttirak Sridam</span>
+      </h1>
+      <p class="hero-degree">
+        <strong>ครุศาสตรบัณฑิต สาขาวิชาภาษาไทย</strong> 
+<br>คณะครุศาสตร์มหาวิทยาลัยราชภัฏอุตรดิตถ์
+<br>สำเร็จการศึกษาด้วยเกียรตินิยมอันดับ 1 เกรดเฉลี่ย 3.80 
+<br>มุ่งมั่นในวิชาชีพ งานผู้นำนักศึกษา และงานพัฒนาชุมชน
+      </p>
+      <div class="hero-badges">
+        <div class="hbadge"><b>เกียรตินิยมอันดับ 1</b>&nbsp;GPAX 3.80</div>
+        <div class="hbadge">ใบอนุญาตประกอบวิชาชีพครู <b>คุรุสภา</b></div>
+        <div class="hbadge">ภาษาอังกฤษ <b>CEFR B1</b></div>
+      </div>
+      <div class="hero-cta">
+        <a href="#about" class="btn btn-gold">สำรวจแฟ้มผลงาน ↓</a>
+        <a href="#contact" class="btn btn-ghost">ติดต่อ</a>
+      </div>
+    </div>
+    <div class="hero-portrait-wrap reveal in">
+      <div class="hero-portrait">
+        <img loading="lazy" decoding="async" src="images/img_0001.jpg" alt="รูปถ่ายนายสุทธิรักษ์ ศรีดำ">
+        <div class="ribbon-seal"><span>เกียรตินิยม อันดับ 1</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>SCROLL</span><span class="line"></span></div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">ตอนที่ 1 · Personal Profile</div>
+      <h2 class="section-title">ประวัติส่วนตัวและทักษะความสามารถ</h2>
+      <p class="section-sub">ข้อมูลพื้นฐาน ช่องทางติดต่อ และทักษะรอบด้านที่สั่งสมมาตลอดเส้นทางการเป็นครูภาษาไทย</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card tilt-3d reveal">
+        <div class="about-photo"><img loading="lazy" decoding="async" src="images/img_0002.jpg" alt="รูปถ่ายประจำตัว"></div>
+        <div class="about-info">
+          <div class="name">สุทธิรักษ์ ศรีดำ</div>
+          <div class="role">ชื่อเล่น "ตั้ว" · อายุ 23 ปี</div>
+          <div class="about-contact">
+            <a href="tel:0979904608">
+              <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+              0979904608
+            </a>
+            <a href="mailto:suttirak.mc@gmail.com">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4zm16 12V8.24l-8 6.99-8-6.99V18h16z"/></svg>
+              suttirak.mc@gmail.com
+            </a>
+            <div>
+              <svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 5.6 3 10c0 2.9 1.9 5.5 4.7 6.9-.1.9-.5 2.4-1.5 4 0 0 2.4-.4 4.6-2.1.4 0 .8.1 1.2.1 5 0 9-3.6 9-8s-4-8.9-9-8.9z"/></svg>
+              Line ID: tuastr
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content reveal">
+        <div class="subhead">
+          <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5c0 2.2-1.4 4-3.3 4.7C16.4 12.5 19 15.4 19 19v1H5v-1c0-3.6 2.6-6.5 6.3-7.3C9.4 11 8 9.2 8 7a5 5 0 0 1 4-5z"/></svg>
+          ข้อมูลส่วนตัว
+        </div>
+        <table class="info-table">
+          <tr><td>วัน เดือน ปีเกิด</td><td>3 สิงหาคม 2546</td></tr>
+          <tr><td>เชื้อชาติ / สัญชาติ</td><td>ไทย / ไทย</td></tr>
+          <tr><td>กรุ๊ปเลือด / ศาสนา</td><td>โอ / พุทธ</td></tr>
+          <tr><td>ที่อยู่ปัจจุบัน</td><td>46 หมู่ 2 ตำบลปากน้ำ อำเภอสวรรคโลก จังหวัดสุโขทัย 64110</td></tr>
+          <tr><td>ครอบครัว</td><td>· บิดา นายบุญส่ง ศรีดำ (ขับรถรับส่ง) <br>· มารดา นางจำรัส คูณด้วง (แม่บ้าน) <br>· พี่น้อง 1 คน (พี่สาว)</td></tr>
+        </table>
+
+        <div class="subhead">
+          <svg viewBox="0 0 24 24"><path d="M12 2 1 7l11 5 9-4.1V17h2V7L12 2zM5 13.2V17c0 2 3 4 7 4s7-2 7-4v-3.8l-7 3.2-7-3.2z"/></svg>
+          ประสบการณ์การทำงานในสถานศึกษา
+        </div>
+        <ul class="role-duties" style="margin-bottom:8px;">
+          <li>สมาชิกสภานักเรียน โรงเรียนศรีสำโรงชนูปถัมภ์ — ได้รับรางวัลสภานักเรียนต้นแบบระดับประเทศ ประจำปี 2563</li>
+          <li>หัวหน้าฝ่ายประชาสัมพันธ์และโสตทัศนูปกรณ์ องค์การบริหารกิจกรรมนักศึกษา 
+<br>มหาวิทยาลัยราชภัฏอุตรดิตถ์</li>
+          <li>เลขานุการสภานักศึกษา มหาวิทยาลัยราชภัฏอุตรดิตถ์</li>
+        </ul>
+
+        <div class="subhead">
+          <svg viewBox="0 0 24 24"><path d="M12.9 2h-1.8v2H8v2h1.6c-.5 2.5-1.6 4.7-3.1 6.4-.6-.7-1.1-1.5-1.5-2.4H3.1c.5 1.5 1.3 2.9 2.3 4.1-1.1 1-2.4 1.7-3.9 2.2l.8 1.9c1.8-.6 3.4-1.5 4.7-2.7 1 .9 2.2 1.7 3.5 2.3l.7-1.9c-1.2-.5-2.2-1.2-3.1-2 1.7-2 2.9-4.5 3.4-7.3H15V4h-2.1V2zM17.5 10l-4.5 12h2.2l1.1-3h4.4l1.1 3H24l-4.5-12h-2zm-.5 7 1.5-4.3L20 17h-3z"/></svg>
+          ทักษะทางภาษา
+        </div>
+        <div class="chip-row" style="margin-bottom:10px;">
+          <span class="chip strong">ภาษาไทย — ฟัง พูด อ่าน เขียน ระดับชำนาญ</span>
+        </div>
+        <div class="chip-row" style="margin-bottom:14px;">
+          <span class="chip">แต่งคำประพันธ์</span>
+          <span class="chip">อ่านทำนองเสนาะ / บทอาขยาน</span>
+        </div>
+ <div class="chip-row" style="margin-bottom:10px;">
+          <span class="chip strong">ภาษาอังกฤษ CEFR ระดับ B1</span>
+        </div>
+
+        <div class="subhead">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+          ทักษะการทำงานและเทคโนโลยี
+        </div>
+        <div class="chip-row" style="margin-bottom:10px;">
+          <span class="chip">ประสานงานและสื่อสารองค์กร</span>
+          <span class="chip">ทำงานร่วมกับผู้อื่น</span>
+          <span class="chip">บริหารเวลา / ตรงต่อเวลา</span>
+          <span class="chip">ความรับผิดชอบสูง</span>
+          <span class="chip">ภาวะผู้นำและผู้ตามที่ดี</span>
+          <span class="chip">ออกแบบสื่อโปสเตอร์</span>
+          <span class="chip">ประยุกต์ใช้ AI ในการทำงาน</span>
+        </div>
+        <div class="tool-row">
+          <span class="tool-pill">Word</span><span class="tool-pill">PowerPoint</span>
+          <span class="tool-pill">Excel</span><span class="tool-pill">Teams</span>
+          <span class="tool-pill">Canva</span><span class="tool-pill">Lightroom</span>
+        </div>
+
+        <div class="subhead">
+          <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm12-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
+          ความสามารถพิเศษอื่น ๆ
+        </div>
+        <div class="chip-row">
+          <span class="chip">ร้องเพลง</span>
+          <span class="chip">พิธีกร / การสันทนาการ</span>
+          <span class="chip">เล่นดนตรีประกอบการสันทนาการ</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section class="section alt" id="education">
+  <div class="section-blob" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">ตอนที่ 2 · Educational Record</div>
+      <h2 class="section-title">ประวัติการศึกษา</h2>
+      <p class="section-sub">เส้นทางการศึกษาตั้งแต่ระดับประถมจนถึงปริญญาตรี พร้อมผลการเรียนเฉลี่ยในแต่ละระดับชั้น</p>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card tilt-3d">
+          <div class="tl-year">ปีการศึกษา 2553 – 2558</div>
+          <div class="tl-title">ระดับประถมศึกษา</div>
+          <div class="tl-place">โรงเรียนอนุบาลศรีสำโรง จังหวัดสุโขทัย</div>
+          <span class="tl-gpa">เกรดเฉลี่ย 3.93</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card tilt-3d">
+          <div class="tl-year">ปีการศึกษา 2559 – 2561</div>
+          <div class="tl-title">ระดับมัธยมศึกษาตอนต้น</div>
+          <div class="tl-place">โรงเรียนศรีสำโรงชนูปถัมภ์ จังหวัดสุโขทัย</div>
+          <span class="tl-gpa">เกรดเฉลี่ย 3.81</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card tilt-3d">
+          <div class="tl-year">ปีการศึกษา 2562 – 2564</div>
+          <div class="tl-title">ระดับมัธยมศึกษาตอนปลาย</div>
+          <div class="tl-place">โรงเรียนศรีสำโรงชนูปถัมภ์ จังหวัดสุโขทัย</div>
+          <span class="tl-gpa">เกรดเฉลี่ย 3.84</span>
+        </div>
+      </div>
+      <div class="tl-item grad">
+        <div class="tl-dot"></div>
+        <div class="tl-card tilt-3d">
+          <div class="tl-year">ปีการศึกษา 2565 – 2568</div>
+          <div class="tl-title">ระดับปริญญาตรี — ครุศาสตรบัณฑิต สาขาวิชาภาษาไทย</div>
+          <div class="tl-place">คณะครุศาสตร์ มหาวิทยาลัยราชภัฏอุตรดิตถ์</div>
+          <span class="tl-gpa">เกรดเฉลี่ย 3.80</span>
+          <span class="tl-honor">เกียรตินิยมอันดับ 1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head reveal" style="margin-top:64px;margin-bottom:26px;">
+      <div class="eyebrow">เอกสารหลักฐาน</div>
+      <h2 class="section-title" style="font-size:26px;">เอกสารทางการศึกษาและวิชาชีพ</h2>
+    </div>
+    <div class="doc-grid reveal">
+      <div class="doc-card tilt-3d" onclick="openLightbox('images/img_0003.jpg','ใบรับรองคุณวุฒิ ระดับปริญญาตรี — มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+        <div class="doc-thumb"><img loading="lazy" decoding="async" src="images/img_0004.jpg" alt="ใบรับรองคุณวุฒิ"></div>
+        <div class="doc-text">
+          <div class="eyebrow">Document</div>
+          <h4>ใบรับรองคุณวุฒิ <br>ระดับปริญญาตรี</h4>
+          <p>ออกโดยมหาวิทยาลัยราชภัฏอุตรดิตถ์</p>
+          <div class="view">คลิกเพื่อดูเอกสารฉบับเต็ม →</div>
+        </div>
+      </div>
+      <div class="doc-card tilt-3d" onclick="openLightbox('images/img_0005.jpg','ใบอนุญาตประกอบวิชาชีพครู — คุรุสภา')">
+        <div class="doc-thumb"><img loading="lazy" decoding="async" src="images/img_0006.jpg" alt="ใบอนุญาตประกอบวิชาชีพครู"></div>
+        <div class="doc-text">
+          <div class="eyebrow">Document</div>
+          <h4>ใบอนุญาตประกอบวิชาชีพครู<br>(คุรุสภา)</h4>
+          <p>มีสิทธิประกอบวิชาชีพครู<br>ภายใต้ พ.ร.บ. สภาครูฯ<br>ใช้ได้ตั้งแต่ 4 มิ.ย. 2568 ถึง 7 มิ.ย. 2570</p>
+          <div class="view">คลิกเพื่อดูเอกสารฉบับเต็ม →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRAINING GALLERY ================= -->
+<section class="section" id="training">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">การพัฒนาตนเอง</div>
+      <h2 class="section-title">การอบรมและการพัฒนาวิชาชีพ</h2>
+      <p class="section-sub">ประกาศนียบัตรและกิจกรรมการอบรมที่เข้าร่วมตลอดระยะเวลาการศึกษา แบ่งตามหมวดหมู่</p>
+    </div>
+
+    <div class="gal-tabs reveal">
+      <div class="gal-tab active" data-filter="all">ทั้งหมด</div>
+      <div class="gal-tab" data-filter="teach">ความเป็นครู</div>
+      <div class="gal-tab" data-filter="dev">พัฒนาตนเอง</div>
+    </div>
+
+    <div class="work-grid reveal" id="workGrid">
+
+      <!-- 01 -->
+      <div class="work-card tilt-3d" data-cat="teach">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0007.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'อบรมสัมมนารายวิชาภาษาไทย: การจัดการเรียนการสอนโดยใช้เพลงลูกทุ่งประยุกต์กับวิชาภาษาไทย')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">16 มี.ค. 2566</span>
+          <div class="work-title">สัมมนารายวิชาภาษาไทย "มนต์เสน่ห์แห่งภาษา"</div>
+          <div class="work-desc">การจัดการเรียนการสอนโดยใช้เพลงลูกทุ่งประยุกต์กับวิชาภาษาไทย</div>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="work-card tilt-3d" data-cat="teach">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0008.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'อบรมเชิงปฏิบัติการ เสนาะกรรณวัณณา: ศาสตร์ ศิลป์ การอ่านร้อยกรองทำนองไทยในบทเรียน')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">31 มี.ค. 2567</span>
+          <div class="work-title">เสนาะกรรณวัณณา : ศาสตร์ ศิลป์</div>
+          <div class="work-desc">อบรมเชิงปฏิบัติการการอ่านร้อยกรองทำนองไทยในบทเรียน</div>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="work-card tilt-3d" data-cat="teach">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0009.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'อบรมเชิงปฏิบัติการ ศาสตร์และศิลป์เพลงพื้นบ้าน สู่การจัดการเรียนรู้วิชาภาษาไทย')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">7 มี.ค. 2568</span>
+          <div class="work-title">ศาสตร์และศิลป์เพลงพื้นบ้าน</div>
+          <div class="work-desc">อบรมเชิงปฏิบัติการสู่การจัดการเรียนรู้วิชาภาษาไทย</div>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="work-card tilt-3d" data-cat="teach">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0010.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'ผ่านโครงการค่ายวิชาชีพครูเพื่อเสริมสร้างความเป็นวิศวกรสังคม ประจำปีการศึกษา 2565')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">4–5 ก.พ. 2566</span>
+          <div class="work-title">ค่ายวิชาชีพครูเพื่อเสริมสร้างความเป็นวิศวกรสังคม</div>
+          <div class="work-desc">โครงการประจำปีการศึกษา 2565</div>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="work-card tilt-3d" data-cat="teach">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0011.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'โครงการบริการวิชาการพัฒนาทักษะทางด้านภาษาไทย หัวข้อ หลักเกณฑ์ทางภาษาเพื่อพัฒนาความสามารถในการสอบ O-NET')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">29 ม.ค. 2566</span>
+          <div class="work-title">พัฒนาทักษะทางด้านภาษาไทยเพื่อสอบ O-NET</div>
+          <div class="work-desc">โครงการบริการวิชาการ หัวข้อ "หลักเกณฑ์ทางภาษาเพื่อพัฒนาความสามารถในการสอบ O-NET"</div>
+        </div>
+      </div>
+
+      <!-- 06 : 2 photos -->
+      <div class="work-card tilt-3d" data-cat="teach">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0012.jpg" alt="กิจกรรม 1" onclick="openLightbox(this.src,'สอนภาษาไทยอย่างไรให้โดนใจเด็ก GEN ใหม่ ณ หอประชุมหางนกยูง มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0013.jpg" alt="กิจกรรม 2" onclick="openLightbox(this.src,'สอนภาษาไทยอย่างไรให้โดนใจเด็ก GEN ใหม่ ณ หอประชุมหางนกยูง มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">มหาวิทยาลัยราชภัฏอุตรดิตถ์</span>
+          <div class="work-title">สอนภาษาไทยอย่างไร ให้โดนใจเด็ก GEN ใหม่</div>
+          <div class="work-desc">อบรมเชิงปฏิบัติการ ณ หอประชุมหางนกยูง มหาวิทยาลัยราชภัฏอุตรดิตถ์</div>
+        </div>
+      </div>
+
+      <!-- 07 : 5 photos + 2 certs = 7 images -->
+      <div class="work-card tilt-3d" data-cat="teach">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0014.jpg" alt="ใบประกาศ 1" onclick="openLightbox(this.src,'ใบประกาศผู้กำกับลูกเสือ ขั้นความรู้ทั่วไป')">
+          <img loading="lazy" decoding="async" src="images/img_0015.jpg" alt="ใบประกาศ 2" onclick="openLightbox(this.src,'ใบประกาศผู้กำกับลูกเสือสามัญรุ่นใหญ่ ขั้นความรู้เบื้องต้น (B.T.C.)')">
+          <img loading="lazy" decoding="async" src="images/img_0016.jpg" alt="กิจกรรม 1" onclick="openLightbox(this.src,'ผ่านการอบรมผู้กำกับลูกเสือสามัญรุ่นใหญ่ ขั้นความรู้ทั่วไป และ B.T.C. รุ่นที่ 1/2568')">
+          <img loading="lazy" decoding="async" src="images/img_0017.jpg" alt="กิจกรรม 2" onclick="openLightbox(this.src,'ผ่านการอบรมผู้กำกับลูกเสือสามัญรุ่นใหญ่ ขั้นความรู้ทั่วไป และ B.T.C. รุ่นที่ 1/2568')">
+          <img loading="lazy" decoding="async" src="images/img_0018.jpg" alt="กิจกรรม 3" onclick="openLightbox(this.src,'ผ่านการอบรมผู้กำกับลูกเสือสามัญรุ่นใหญ่ ขั้นความรู้ทั่วไป และ B.T.C. รุ่นที่ 1/2568')">
+          <img loading="lazy" decoding="async" src="images/img_0019.jpg" alt="กิจกรรม 4" onclick="openLightbox(this.src,'ผ่านการอบรมผู้กำกับลูกเสือสามัญรุ่นใหญ่ ขั้นความรู้ทั่วไป และ B.T.C. รุ่นที่ 1/2568')">
+          <img loading="lazy" decoding="async" src="images/img_0020.jpg" alt="กิจกรรม 5" onclick="openLightbox(this.src,'ผ่านการอบรมผู้กำกับลูกเสือสามัญรุ่นใหญ่ ขั้นความรู้ทั่วไป และ B.T.C. รุ่นที่ 1/2568')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,4)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,5)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,6)"></span>
+          </div>
+          <div class="wc-count">7 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">ค่ายลูกเสือ ร.ร.อนุบาลอุตรดิตถ์ แห่งที่ 2</span>
+          <div class="work-title">ผู้กำกับลูกเสือสามัญรุ่นใหญ่ (B.T.C.)</div>
+          <div class="work-desc">ผ่านการฝึกอบรมผู้กำกับลูกเสือขั้นความรู้ทั่วไป และขั้นความรู้เบื้องต้น รุ่นที่ 1/2568 อำเภอเมือง จังหวัดอุตรดิตถ์</div>
+        </div>
+      </div>
+
+      <!-- 08 : 4 photos + 1 cert = 5 images -->
+      <div class="work-card tilt-3d" data-cat="teach">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0021.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'ใบประกาศ โครงการค่ายรณรงค์ต่อต้านการทุจริต')">
+          <img loading="lazy" decoding="async" src="images/img_0022.jpg" alt="กิจกรรม 1" onclick="openLightbox(this.src,'โครงการค่ายรณรงค์ต่อต้านการทุจริต จากสำนักงาน ป.ป.ท. ณ จังหวัดเชียงใหม่')">
+          <img loading="lazy" decoding="async" src="images/img_0023.jpg" alt="กิจกรรม 2" onclick="openLightbox(this.src,'โครงการค่ายรณรงค์ต่อต้านการทุจริต จากสำนักงาน ป.ป.ท. ณ จังหวัดเชียงใหม่')">
+          <img loading="lazy" decoding="async" src="images/img_0024.jpg" alt="กิจกรรม 3" onclick="openLightbox(this.src,'โครงการค่ายรณรงค์ต่อต้านการทุจริต จากสำนักงาน ป.ป.ท. ณ จังหวัดเชียงใหม่')">
+          <img loading="lazy" decoding="async" src="images/img_0025.jpg" alt="กิจกรรม 4" onclick="openLightbox(this.src,'โครงการค่ายรณรงค์ต่อต้านการทุจริต จากสำนักงาน ป.ป.ท. ณ จังหวัดเชียงใหม่')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,4)"></span>
+          </div>
+          <div class="wc-count">5 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">โรงแรมกรีนนิมมาน จ.เชียงใหม่</span>
+          <div class="work-title">ค่ายรณรงค์ต่อต้านการทุจริต</div>
+          <div class="work-desc">จัดกิจกรรมและบรรยายให้ความรู้ โดยสำนักงานคณะกรรมการป้องกันและปราบปรามการทุจริตในภาครัฐ (ป.ป.ท.) ตำบลสุเทพ อำเภอเมือง</div>
+        </div>
+      </div>
+
+      <!-- 09 : 5 photos -->
+      <div class="work-card tilt-3d" data-cat="teach">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0026.jpg" alt="กิจกรรม 1" onclick="openLightbox(this.src,'อบรมเชิงปฏิบัติการ พัฒนาศักยภาพความเป็นผู้นำนักศึกษา ณ อาคารภูมิราชภัฏ มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0027.jpg" alt="กิจกรรม 2" onclick="openLightbox(this.src,'อบรมเชิงปฏิบัติการ พัฒนาศักยภาพความเป็นผู้นำนักศึกษา ณ อาคารภูมิราชภัฏ มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0028.jpg" alt="กิจกรรม 3" onclick="openLightbox(this.src,'อบรมเชิงปฏิบัติการ พัฒนาศักยภาพความเป็นผู้นำนักศึกษา ณ อาคารภูมิราชภัฏ มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0029.jpg" alt="กิจกรรม 4" onclick="openLightbox(this.src,'อบรมเชิงปฏิบัติการ พัฒนาศักยภาพความเป็นผู้นำนักศึกษา ณ อาคารภูมิราชภัฏ มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0030.jpg" alt="กิจกรรม 5" onclick="openLightbox(this.src,'อบรมเชิงปฏิบัติการ พัฒนาศักยภาพความเป็นผู้นำนักศึกษา ณ อาคารภูมิราชภัฏ มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,4)"></span>
+          </div>
+          <div class="wc-count">5 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">อาคารภูมิราชภัฏ มหาวิทยาลัยราชภัฏอุตรดิตถ์</span>
+          <div class="work-title">พัฒนาศักยภาพความเป็นผู้นำนักศึกษา</div>
+          <div class="work-desc">อบรมเชิงปฏิบัติการเสริมสร้างภาวะผู้นำสำหรับนักศึกษา</div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="work-card tilt-3d" data-cat="dev">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0031.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'การอบรม เรื่อง เทคโนโลยีสารสนเทศเพื่อการจัดการความรู้ คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยมหิดล')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">6 ก.ค. 2566</span>
+          <div class="work-title">เทคโนโลยีสารสนเทศเพื่อการจัดการความรู้</div>
+          <div class="work-desc">คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยมหิดล (MUx)</div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="work-card tilt-3d" data-cat="dev">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0032.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'ผ่านเกณฑ์การทดสอบกิจกรรมส่งเสริมการอ่านออนไลน์ กิจกรรมเรียนรู้สุภาษิตไทย กับห้องสมุดประชาชนกาบัง')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">30 ม.ค. 2569</span>
+          <div class="work-title">กิจกรรมเรียนรู้สุภาษิตไทย</div>
+          <div class="work-desc">ผ่านเกณฑ์การทดสอบกิจกรรมส่งเสริมการอ่านออนไลน์ผ่านระบบอิเล็กทรอนิกส์ ห้องสมุดประชาชนอำเภอกาบัง</div>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="work-card tilt-3d" data-cat="dev">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0033.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'กิจกรรมตอบแบบทดสอบผ่านระบบอิเล็กทรอนิกส์ สารานุกรมไทยสำหรับเยาวชน เล่ม 44: โลมาสีชมพู คะแนน 100%')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">6 ก.พ. 2569 · คะแนน 100%</span>
+          <div class="work-title">สารานุกรมไทยสำหรับเยาวชน เล่ม 44</div>
+          <div class="work-desc">กิจกรรมตอบแบบทดสอบผ่านระบบอิเล็กทรอนิกส์ เรื่อง "โลมาสีชมพู" ศูนย์ส่งเสริมการเรียนรู้อำเภอบึงสามพัน</div>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="work-card tilt-3d" data-cat="dev">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0034.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'การเรียนรู้ผ่านสื่ออิเล็กทรอนิกส์ หลักสูตรการเชื่อมโยงเป้าหมายการพัฒนาประเทศไทยสู่การปฏิบัติ คะแนน 80%')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">28 มี.ค. 2569 · คะแนน 80%</span>
+          <div class="work-title">เชื่อมโยงเป้าหมายการพัฒนาประเทศไทยสู่การปฏิบัติ</div>
+          <div class="work-desc">หลักสูตรการเรียนรู้ผ่านสื่ออิเล็กทรอนิกส์ สพป.ราชบุรี เขต 1</div>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="work-card tilt-3d" data-cat="dev">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0035.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'การเรียนรู้ผ่านสื่ออิเล็กทรอนิกส์ หลักสูตรความรู้ความเข้าใจพื้นฐานด้านการเงิน การบัญชี พัสดุและสินทรัพย์ในสถานศึกษา คะแนน 93.33%')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">28 มี.ค. 2569 · คะแนน 93.33%</span>
+          <div class="work-title">พื้นฐานด้านการเงิน การบัญชี พัสดุและสินทรัพย์</div>
+          <div class="work-desc">หลักสูตรความรู้ความเข้าใจในสถานศึกษา ผ่านสื่ออิเล็กทรอนิกส์ สพป.ราชบุรี เขต 1</div>
+        </div>
+      </div>
+
+      <!-- 15 -->
+      <div class="work-card tilt-3d" data-cat="dev">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0036.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'กิจกรรมตอบคำถามจากการอ่านหนังสือพระราชนิพนธ์ในสมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชสุดา ฯ สยามบรมราชกุมารี')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">27 มี.ค. 2569</span>
+          <div class="work-title">ตอบคำถามจากพระราชนิพนธ์</div>
+          <div class="work-desc">กิจกรรมวันรักการอ่าน จากหนังสือพระราชนิพนธ์ในสมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชสุดา ฯ สยามบรมราชกุมารี</div>
+        </div>
+      </div>
+
+      <!-- 16 -->
+      <div class="work-card tilt-3d" data-cat="dev">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0037.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'กิจกรรมส่งเสริมการเรียนรู้ตลอดชีวิต เรื่อง พระราชสมัญญานาม พระผู้ทรงเป็นแม่และครูแห่งแผ่นดิน ในพระบรมราชชนนีพันปีหลวง คะแนน 100%')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">27 มี.ค. 2569 · คะแนน 100%</span>
+          <div class="work-title">"พระผู้ทรงเป็นแม่และครูแห่งแผ่นดิน"</div>
+          <div class="work-desc">กิจกรรมส่งเสริมการเรียนรู้ตลอดชีวิต เรื่องพระราชสมัญญานามในพระบรมราชชนนีพันปีหลวง ศูนย์ส่งเสริมการเรียนรู้อำเภอบางมูลนาก</div>
+        </div>
+      </div>
+
+      <!-- 17 -->
+      <div class="work-card tilt-3d" data-cat="dev">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0038.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'เสวนา เรื่อง โอกาส ความเสมอภาค และการลดความเหลื่อมล้ำทางการศึกษา ยุคปัญญาประดิษฐ์ ผ่าน Khuru Platform')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">22 เม.ย. 2569 · คุรุสภา</span>
+          <div class="work-title">โอกาส ความเสมอภาค และความเหลื่อมล้ำทางการศึกษา</div>
+          <div class="work-desc">เสวนายุคปัญญาประดิษฐ์ เนื่องในงานวันครู ครั้งที่ 70 ผ่านแพลตฟอร์มออนไลน์ "Khuru Platform"</div>
+        </div>
+      </div>
+
+      <!-- 18 -->
+      <div class="work-card tilt-3d" data-cat="dev">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0039.jpg" alt="ใบประกาศ" onclick="openLightbox(this.src,'เสวนา เรื่อง ระบบนิเวศการเรียนรู้ Learning Ecosystem สังคมแห่งการเรียนรู้ตลอดชีวิต ผ่าน Khuru Platform')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">23 เม.ย. 2569 · คุรุสภา</span>
+          <div class="work-title">ระบบนิเวศการเรียนรู้ (Learning Ecosystem)</div>
+          <div class="work-desc">เสวนาสังคมแห่งการเรียนรู้ตลอดชีวิต เนื่องในงานวันครู ครั้งที่ 70 ผ่านแพลตฟอร์มออนไลน์ "Khuru Platform"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= ACHIEVEMENTS ================= -->
+<section class="section alt" id="achievements">
+  <div class="section-blob" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">ตอนที่ 3 · Working Experience</div>
+      <h2 class="section-title">ผลงานและรางวัลที่ภาคภูมิใจ</h2>
+      <p class="section-sub">รางวัลจากการแข่งขันทักษะทางวิชาการ และบทบาทวิทยากรที่ได้รับความไว้วางใจให้ถ่ายทอดความรู้</p>
+    </div>
+
+    <div class="work-grid reveal">
+
+      <!-- Award 1: cert + 3 photos -->
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0040.jpg" alt="ใบประกาศเกียรติคุณ" onclick="openLightbox(this.src,'รางวัลชมเชย การแข่งขันกลอนสดเขตภาคเหนือ ระดับอุดมศึกษา')">
+          <img loading="lazy" decoding="async" src="images/img_0041.jpg" alt="กิจกรรม 1" onclick="openLightbox(this.src,'รางวัลชมเชย การแข่งขันกลอนสดเขตภาคเหนือ ระดับอุดมศึกษา')">
+          <img loading="lazy" decoding="async" src="images/img_0042.jpg" alt="กิจกรรม 2" onclick="openLightbox(this.src,'รางวัลชมเชย การแข่งขันกลอนสดเขตภาคเหนือ ระดับอุดมศึกษา')">
+          <img loading="lazy" decoding="async" src="images/img_0043.jpg" alt="กิจกรรม 3" onclick="openLightbox(this.src,'รางวัลชมเชย การแข่งขันกลอนสดเขตภาคเหนือ ระดับอุดมศึกษา')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+          </div>
+          <div class="wc-count">4 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">การแข่งขันทักษะภาษาไทย</span>
+          <div class="work-title">รางวัลชมเชย การแข่งขันกลอนสดเขตภาคเหนือ ระดับอุดมศึกษา</div>
+          <div class="work-desc">การแข่งขันกลอนสดระดับภาคเหนือ ระดับ ประถม-มัธยม-อุดมศึกษา เพื่อคัดเลือกตัวแทนเขตภาคเหนือเข้าชิงรางวัลพระราชทาน สมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชสุดา ฯ สยามบรมราชกุมารี</div>
+        </div>
+      </div>
+
+      <!-- Award 2: cert only -->
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0044.jpg" alt="ใบประกาศเกียรติคุณ" onclick="openLightbox(this.src,'รางวัลรองชนะเลิศอันดับ 3 การแข่งขันท่องอาขยานหมู่')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">คณะครุศาสตร์ · 2568</span>
+          <div class="work-title">รองชนะเลิศอันดับ 3 การแข่งขันท่องอาขยานหมู่</div>
+          <div class="work-desc">กิจกรรมการประเมินสมรรถนะเฉพาะครูภาษาไทย ประจำคณะครุศาสตร์ ปี 2568 ณ มหาวิทยาลัยราชภัฏอุตรดิตถ์</div>
+        </div>
+      </div>
+
+      <!-- Award 3: cert + 3 photos -->
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0045.jpg" alt="ใบประกาศเกียรติคุณ" onclick="openLightbox(this.src,'วิทยากรอบรมความรู้แก่สภานักเรียน โรงเรียนลับแลพิทยาคม')">
+          <img loading="lazy" decoding="async" src="images/img_0046.jpg" alt="กิจกรรม 1" onclick="openLightbox(this.src,'วิทยากรอบรมความรู้แก่สภานักเรียน โรงเรียนลับแลพิทยาคม')">
+          <img loading="lazy" decoding="async" src="images/img_0047.jpg" alt="กิจกรรม 2" onclick="openLightbox(this.src,'วิทยากรอบรมความรู้แก่สภานักเรียน โรงเรียนลับแลพิทยาคม')">
+          <img loading="lazy" decoding="async" src="images/img_0048.jpg" alt="กิจกรรม 3" onclick="openLightbox(this.src,'วิทยากรอบรมความรู้แก่สภานักเรียน โรงเรียนลับแลพิทยาคม')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+          </div>
+          <div class="wc-count">4 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">บทบาทวิทยากร</span>
+          <div class="work-title">วิทยากรอบรมความรู้แก่สภานักเรียน</div>
+          <div class="work-desc">ให้ความรู้เรื่องการจัดตั้งสภานักเรียน การทำงานและบทบาทหน้าที่ของสภานักเรียน ณ โรงเรียนลับแลพิทยาคม ตำบลฝายหลวง อำเภอลับแล จังหวัดอุตรดิตถ์</div>
+        </div>
+      </div>
+
+      <!-- Award 4: cert + 5 photos -->
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0049.jpg" alt="ใบประกาศเกียรติคุณ" onclick="openLightbox(this.src,'วิทยากรกิจกรรมค่ายวิชาการ (ภาษาไทย) ระดับประถมศึกษา')">
+          <img loading="lazy" decoding="async" src="images/img_0050.jpg" alt="กิจกรรม 1" onclick="openLightbox(this.src,'วิทยากรกิจกรรมค่ายวิชาการ (ภาษาไทย) ระดับประถมศึกษา')">
+          <img loading="lazy" decoding="async" src="images/img_0051.jpg" alt="กิจกรรม 2" onclick="openLightbox(this.src,'วิทยากรกิจกรรมค่ายวิชาการ (ภาษาไทย) ระดับประถมศึกษา')">
+          <img loading="lazy" decoding="async" src="images/img_0052.jpg" alt="กิจกรรม 3" onclick="openLightbox(this.src,'วิทยากรกิจกรรมค่ายวิชาการ (ภาษาไทย) ระดับประถมศึกษา')">
+          <img loading="lazy" decoding="async" src="images/img_0053.jpg" alt="กิจกรรม 4" onclick="openLightbox(this.src,'วิทยากรกิจกรรมค่ายวิชาการ (ภาษาไทย) ระดับประถมศึกษา')">
+          <img loading="lazy" decoding="async" src="images/img_0054.jpg" alt="กิจกรรม 5" onclick="openLightbox(this.src,'วิทยากรกิจกรรมค่ายวิชาการ (ภาษาไทย) ระดับประถมศึกษา')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,4)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,5)"></span>
+          </div>
+          <div class="wc-count">6 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">บทบาทวิทยากร</span>
+          <div class="work-title">วิทยากรกิจกรรมค่ายวิชาการ (ภาษาไทย) ระดับประถมศึกษา</div>
+          <div class="work-desc">ให้ความรู้เกี่ยวกับภาษาไทยเบื้องต้นแก่นักเรียนระดับประถมศึกษา ณ โรงเรียนอนุบาลเทศบาลตำบลสากเหล็ก อำเภอสากเหล็ก จังหวัดพิจิตร</div>
+        </div>
+      </div>
+
+      <!-- Award 5: cert + 3 photos -->
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0055.jpg" alt="ใบประกาศเกียรติคุณ" onclick="openLightbox(this.src,'ผู้ช่วยวิทยากรค่าย กิจกรรมพัฒนาทักษะการเรียนรู้ โรงเรียนนาน้อย จังหวัดน่าน')">
+          <img loading="lazy" decoding="async" src="images/img_0056.jpg" alt="กิจกรรม 1" onclick="openLightbox(this.src,'ผู้ช่วยวิทยากรค่าย กิจกรรมพัฒนาทักษะการเรียนรู้ โรงเรียนนาน้อย จังหวัดน่าน')">
+          <img loading="lazy" decoding="async" src="images/img_0057.jpg" alt="กิจกรรม 2" onclick="openLightbox(this.src,'ผู้ช่วยวิทยากรค่าย กิจกรรมพัฒนาทักษะการเรียนรู้ โรงเรียนนาน้อย จังหวัดน่าน')">
+          <img loading="lazy" decoding="async" src="images/img_0058.jpg" alt="กิจกรรม 3" onclick="openLightbox(this.src,'ผู้ช่วยวิทยากรค่าย กิจกรรมพัฒนาทักษะการเรียนรู้ โรงเรียนนาน้อย จังหวัดน่าน')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+          </div>
+          <div class="wc-count">4 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">โครงการพัฒนาทักษะการเรียนรู้</span>
+          <div class="work-title">ผู้ช่วยวิทยากรค่าย กิจกรรมพัฒนาทักษะการเรียนรู้</div>
+          <div class="work-desc">เพื่อส่งเสริมความสามารถด้านการอ่านจับใจความด้วยเทคนิคบันได 6 ขั้น ณ โรงเรียนนาน้อย ตำบลนาน้อย อำเภอนาน้อย จังหวัดน่าน</div>
+        </div>
+      </div>
+
+      <!-- Award 6: cert + 5 photos -->
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0059.jpg" alt="ใบประกาศเกียรติคุณ" onclick="openLightbox(this.src,'ออมสินยุวพัฒน์รักษ์ถิ่น มหาวิทยาลัยราชภัฏอุตรดิตถ์ และธนาคารออมสิน')">
+          <img loading="lazy" decoding="async" src="images/img_0060.jpg" alt="กิจกรรม 1" onclick="openLightbox(this.src,'ออมสินยุวพัฒน์รักษ์ถิ่น มหาวิทยาลัยราชภัฏอุตรดิตถ์ และธนาคารออมสิน')">
+          <img loading="lazy" decoding="async" src="images/img_0061.jpg" alt="กิจกรรม 2" onclick="openLightbox(this.src,'ออมสินยุวพัฒน์รักษ์ถิ่น มหาวิทยาลัยราชภัฏอุตรดิตถ์ และธนาคารออมสิน')">
+          <img loading="lazy" decoding="async" src="images/img_0062.jpg" alt="กิจกรรม 3" onclick="openLightbox(this.src,'ออมสินยุวพัฒน์รักษ์ถิ่น มหาวิทยาลัยราชภัฏอุตรดิตถ์ และธนาคารออมสิน')">
+          <img loading="lazy" decoding="async" src="images/img_0063.jpg" alt="กิจกรรม 4" onclick="openLightbox(this.src,'ออมสินยุวพัฒน์รักษ์ถิ่น มหาวิทยาลัยราชภัฏอุตรดิตถ์ และธนาคารออมสิน')">
+          <img loading="lazy" decoding="async" src="images/img_0064.jpg" alt="กิจกรรม 5" onclick="openLightbox(this.src,'ออมสินยุวพัฒน์รักษ์ถิ่น มหาวิทยาลัยราชภัฏอุตรดิตถ์ และธนาคารออมสิน')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,4)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,5)"></span>
+          </div>
+          <div class="wc-count">6 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">โครงการพัฒนาชุมชน</span>
+          <div class="work-title">ออมสินยุวพัฒน์รักษ์ถิ่น</div>
+          <div class="work-desc">สมาชิกทีมงานส่วนของการรายงานผล เพื่อนำเสนอผลการเพิ่มศักยภาพขององค์กรชุมชนที่ได้ร่วมพัฒนาให้สามารถเข้าสู่ตลาดการค้า มหาวิทยาลัยราชภัฏอุตรดิตถ์ และธนาคารออมสิน</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEADERSHIP ================= -->
+<section class="section" id="leadership">
+  <div class="section-blob" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">บทบาทผู้นำนักศึกษา</div>
+      <h2 class="section-title">ผลงานระหว่างการศึกษาในมหาวิทยาลัย</h2>
+      <p class="section-sub">บทบาทผู้นำและความรับผิดชอบในองค์กรนักศึกษา ที่ฝึกฝนทักษะการบริหารจัดการและการทำงานร่วมกับผู้อื่น — คลิกลูกศรเพื่อดูภาพกิจกรรมของแต่ละบทบาท</p>
+    </div>
+
+    <div class="leader-grid reveal">
+
+      <!-- L1: cert + 6 photos -->
+      <div class="leader-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0065.jpg" alt="เกียรติบัตร" onclick="openLightbox(this.src,'หัวหน้าฝ่ายโสตทัศนูปกรณ์และเทคโนโลยี องค์การบริหารกิจกรรมนักศึกษา ปีการศึกษา 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0066.jpg" alt="กิจกรรม 1" onclick="openLightbox(this.src,'หัวหน้าฝ่ายโสตทัศนูปกรณ์และเทคโนโลยี องค์การบริหารกิจกรรมนักศึกษา ปีการศึกษา 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0067.jpg" alt="กิจกรรม 2" onclick="openLightbox(this.src,'หัวหน้าฝ่ายโสตทัศนูปกรณ์และเทคโนโลยี องค์การบริหารกิจกรรมนักศึกษา ปีการศึกษา 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0068.jpg" alt="กิจกรรม 3" onclick="openLightbox(this.src,'หัวหน้าฝ่ายโสตทัศนูปกรณ์และเทคโนโลยี องค์การบริหารกิจกรรมนักศึกษา ปีการศึกษา 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0069.jpg" alt="กิจกรรม 4" onclick="openLightbox(this.src,'หัวหน้าฝ่ายโสตทัศนูปกรณ์และเทคโนโลยี องค์การบริหารกิจกรรมนักศึกษา ปีการศึกษา 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0070.jpg" alt="กิจกรรม 5" onclick="openLightbox(this.src,'หัวหน้าฝ่ายโสตทัศนูปกรณ์และเทคโนโลยี องค์การบริหารกิจกรรมนักศึกษา ปีการศึกษา 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0071.jpg" alt="กิจกรรม 6" onclick="openLightbox(this.src,'หัวหน้าฝ่ายโสตทัศนูปกรณ์และเทคโนโลยี องค์การบริหารกิจกรรมนักศึกษา ปีการศึกษา 2567')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,4)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,5)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,6)"></span>
+          </div>
+          <div class="wc-count">7 รูป</div>
+        </div>
+        <div class="role-org">
+          <div class="yr">ปีการศึกษา 2567</div>
+          <div class="ttl">หัวหน้าฝ่ายโสตทัศนูปกรณ์และเทคโนโลยี</div>
+          <div class="org">องค์การบริหารกิจกรรมนักศึกษา มหาวิทยาลัยราชภัฏอุตรดิตถ์</div>
+        </div>
+        <ul class="role-duties">
+          <li>ประชาสัมพันธ์ข้อมูลข่าวสารทางสื่อออนไลน์และดูแลเพจ Facebook</li>
+          <li>บันทึกภาพและเสียงของการดำเนินกิจกรรม</li>
+          <li>ประชุมวางแผน ออกแบบ และดำเนินการจัดกิจกรรมของมหาวิทยาลัย</li>
+          <li>ปฏิบัติหน้าที่ร่วมกับฝ่ายอื่น และหน่วยงานภายนอกที่มีส่วนเกี่ยวข้อง</li>
+        </ul>
+      </div>
+
+      <!-- L2: cert + 6 photos -->
+      <div class="leader-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0072.jpg" alt="เกียรติบัตร" onclick="openLightbox(this.src,'สมาชิกสภานักศึกษา ปีการศึกษา 2568')">
+          <img loading="lazy" decoding="async" src="images/img_0073.jpg" alt="กิจกรรม 1" onclick="openLightbox(this.src,'สมาชิกสภานักศึกษา ปีการศึกษา 2568')">
+          <img loading="lazy" decoding="async" src="images/img_0074.jpg" alt="กิจกรรม 2" onclick="openLightbox(this.src,'สมาชิกสภานักศึกษา ปีการศึกษา 2568')">
+          <img loading="lazy" decoding="async" src="images/img_0075.jpg" alt="กิจกรรม 3" onclick="openLightbox(this.src,'สมาชิกสภานักศึกษา ปีการศึกษา 2568')">
+          <img loading="lazy" decoding="async" src="images/img_0076.jpg" alt="กิจกรรม 4" onclick="openLightbox(this.src,'สมาชิกสภานักศึกษา ปีการศึกษา 2568')">
+          <img loading="lazy" decoding="async" src="images/img_0077.jpg" alt="กิจกรรม 5" onclick="openLightbox(this.src,'สมาชิกสภานักศึกษา ปีการศึกษา 2568')">
+          <img loading="lazy" decoding="async" src="images/img_0078.jpg" alt="กิจกรรม 6" onclick="openLightbox(this.src,'สมาชิกสภานักศึกษา ปีการศึกษา 2568')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,4)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,5)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,6)"></span>
+          </div>
+          <div class="wc-count">7 รูป</div>
+        </div>
+        <div class="role-org">
+          <div class="yr">ปีการศึกษา 2568</div>
+          <div class="ttl">สมาชิกสภานักศึกษา</div>
+          <div class="org">มหาวิทยาลัยราชภัฏอุตรดิตถ์</div>
+        </div>
+        <ul class="role-duties">
+          <li>ดูแลควบคุมระเบียบขององค์การบริหารกิจกรรมนักศึกษาและสโมสรนักศึกษา</li>
+          <li>ประชุมหารือจัดสรรงบประมาณในการดำเนินกิจกรรม</li>
+          <li>เป็นตัวแทนนักศึกษาเข้าร่วมการประชุมกับทางมหาวิทยาลัย</li>
+          <li>เข้าร่วมกิจกรรมสำคัญของทางมหาวิทยาลัย</li>
+        </ul>
+      </div>
+
+      <!-- L3: 8 photos, no cert -->
+      <div class="leader-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0079.jpg" alt="กิจกรรม 1" onclick="openLightbox(this.src,'ผู้นำเชียร์ และผู้ฝึกผู้นำเชียร์คณะครุศาสตร์ มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0080.jpg" alt="กิจกรรม 2" onclick="openLightbox(this.src,'ผู้นำเชียร์ และผู้ฝึกผู้นำเชียร์คณะครุศาสตร์ มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0081.jpg" alt="กิจกรรม 3" onclick="openLightbox(this.src,'ผู้นำเชียร์ และผู้ฝึกผู้นำเชียร์คณะครุศาสตร์ มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0082.jpg" alt="กิจกรรม 4" onclick="openLightbox(this.src,'ผู้นำเชียร์ และผู้ฝึกผู้นำเชียร์คณะครุศาสตร์ มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0083.jpg" alt="กิจกรรม 5" onclick="openLightbox(this.src,'ผู้นำเชียร์ และผู้ฝึกผู้นำเชียร์คณะครุศาสตร์ มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0084.jpg" alt="กิจกรรม 6" onclick="openLightbox(this.src,'ผู้นำเชียร์ และผู้ฝึกผู้นำเชียร์คณะครุศาสตร์ มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0085.jpg" alt="กิจกรรม 7" onclick="openLightbox(this.src,'ผู้นำเชียร์ และผู้ฝึกผู้นำเชียร์คณะครุศาสตร์ มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0086.jpg" alt="กิจกรรม 8" onclick="openLightbox(this.src,'ผู้นำเชียร์ และผู้ฝึกผู้นำเชียร์คณะครุศาสตร์ มหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,4)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,5)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,6)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,7)"></span>
+          </div>
+          <div class="wc-count">8 รูป</div>
+        </div>
+        <div class="role-org">
+          <div class="yr">ปี 2565–2567</div>
+          <div class="ttl">ผู้นำเชียร์ &amp; ผู้ฝึกผู้นำเชียร์คณะครุศาสตร์</div>
+          <div class="org">มหาวิทยาลัยราชภัฏอุตรดิตถ์</div>
+        </div>
+        <ul class="role-duties">
+          <li>ทำหน้าที่เป็นผู้นำเชียร์ของคณะครุศาสตร์ ปีการศึกษา 2565–2566</li>
+          <li>เป็นผู้ฝึกผู้นำเชียร์คณะครุศาสตร์ ปีการศึกษา 2566 และ 2567</li>
+        </ul>
+      </div>
+
+      <!-- L4: 10 photos, no cert -->
+      <div class="leader-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0087.jpg" alt="ผลงาน 1" onclick="openLightbox(this.src,'ตัวอย่างผลงานการออกแบบสื่อประชาสัมพันธ์ สาขาวิชาภาษาไทย ทางเพจ Facebook')">
+          <img loading="lazy" decoding="async" src="images/img_0088.jpg" alt="ผลงาน 2" onclick="openLightbox(this.src,'ตัวอย่างผลงานการออกแบบสื่อประชาสัมพันธ์ สาขาวิชาภาษาไทย ทางเพจ Facebook')">
+          <img loading="lazy" decoding="async" src="images/img_0089.jpg" alt="ผลงาน 3" onclick="openLightbox(this.src,'ตัวอย่างผลงานการออกแบบสื่อประชาสัมพันธ์ สาขาวิชาภาษาไทย ทางเพจ Facebook')">
+          <img loading="lazy" decoding="async" src="images/img_0090.jpg" alt="ผลงาน 4" onclick="openLightbox(this.src,'ตัวอย่างผลงานการออกแบบสื่อประชาสัมพันธ์ สาขาวิชาภาษาไทย ทางเพจ Facebook')">
+          <img loading="lazy" decoding="async" src="images/img_0091.jpg" alt="ผลงาน 5" onclick="openLightbox(this.src,'ตัวอย่างผลงานการออกแบบสื่อประชาสัมพันธ์ สาขาวิชาภาษาไทย ทางเพจ Facebook')">
+          <img loading="lazy" decoding="async" src="images/img_0092.jpg" alt="ผลงาน 6" onclick="openLightbox(this.src,'ตัวอย่างผลงานการออกแบบสื่อประชาสัมพันธ์ สาขาวิชาภาษาไทย ทางเพจ Facebook')">
+          <img loading="lazy" decoding="async" src="images/img_0093.jpg" alt="ผลงาน 7" onclick="openLightbox(this.src,'ตัวอย่างผลงานการออกแบบสื่อประชาสัมพันธ์ สาขาวิชาภาษาไทย ทางเพจ Facebook')">
+          <img loading="lazy" decoding="async" src="images/img_0094.jpg" alt="ผลงาน 8" onclick="openLightbox(this.src,'ตัวอย่างผลงานการออกแบบสื่อประชาสัมพันธ์ สาขาวิชาภาษาไทย ทางเพจ Facebook')">
+          <img loading="lazy" decoding="async" src="images/img_0095.jpg" alt="ผลงาน 9" onclick="openLightbox(this.src,'ตัวอย่างผลงานการออกแบบสื่อประชาสัมพันธ์ สาขาวิชาภาษาไทย ทางเพจ Facebook')">
+          <img loading="lazy" decoding="async" src="images/img_0096.jpg" alt="ผลงาน 10" onclick="openLightbox(this.src,'ตัวอย่างผลงานการออกแบบสื่อประชาสัมพันธ์ สาขาวิชาภาษาไทย ทางเพจ Facebook')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,4)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,5)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,6)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,7)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,8)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,9)"></span>
+          </div>
+          <div class="wc-count">10 รูป</div>
+        </div>
+        <div class="role-org">
+          <div class="yr">ระหว่างการศึกษา</div>
+          <div class="ttl">ผู้รับผิดชอบงานประชาสัมพันธ์สาขาวิชา</div>
+          <div class="org">สาขาวิชาภาษาไทย คณะครุศาสตร์ (ทาง Facebook)</div>
+        </div>
+        <ul class="role-duties">
+          <li>ออกแบบสื่อประชาสัมพันธ์ของสาขาวิชาภาษาไทยทั้งหมด</li>
+          <li>ดูแลเพจ Facebook ประชาสัมพันธ์ข่าวสารและกิจกรรมของสาขาวิชา</li>
+        </ul>
+      </div>
+
+      <!-- L5: 10 photos, no cert -->
+      <div class="leader-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0097.jpg" alt="กิจกรรม 1" onclick="openLightbox(this.src,'สมาชิกทีมเจ้าภาพจัดโครงการค่ายอาสาพัฒนา มหาวิทยาลัยราชภัฏกลุ่มภาคเหนือ ครั้งที่ 37 ปี 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0098.jpg" alt="กิจกรรม 2" onclick="openLightbox(this.src,'สมาชิกทีมเจ้าภาพจัดโครงการค่ายอาสาพัฒนา มหาวิทยาลัยราชภัฏกลุ่มภาคเหนือ ครั้งที่ 37 ปี 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0099.jpg" alt="กิจกรรม 3" onclick="openLightbox(this.src,'สมาชิกทีมเจ้าภาพจัดโครงการค่ายอาสาพัฒนา มหาวิทยาลัยราชภัฏกลุ่มภาคเหนือ ครั้งที่ 37 ปี 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0100.jpg" alt="กิจกรรม 4" onclick="openLightbox(this.src,'สมาชิกทีมเจ้าภาพจัดโครงการค่ายอาสาพัฒนา มหาวิทยาลัยราชภัฏกลุ่มภาคเหนือ ครั้งที่ 37 ปี 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0101.jpg" alt="กิจกรรม 5" onclick="openLightbox(this.src,'สมาชิกทีมเจ้าภาพจัดโครงการค่ายอาสาพัฒนา มหาวิทยาลัยราชภัฏกลุ่มภาคเหนือ ครั้งที่ 37 ปี 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0102.jpg" alt="กิจกรรม 6" onclick="openLightbox(this.src,'สมาชิกทีมเจ้าภาพจัดโครงการค่ายอาสาพัฒนา มหาวิทยาลัยราชภัฏกลุ่มภาคเหนือ ครั้งที่ 37 ปี 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0103.jpg" alt="กิจกรรม 7" onclick="openLightbox(this.src,'สมาชิกทีมเจ้าภาพจัดโครงการค่ายอาสาพัฒนา มหาวิทยาลัยราชภัฏกลุ่มภาคเหนือ ครั้งที่ 37 ปี 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0104.jpg" alt="กิจกรรม 8" onclick="openLightbox(this.src,'สมาชิกทีมเจ้าภาพจัดโครงการค่ายอาสาพัฒนา มหาวิทยาลัยราชภัฏกลุ่มภาคเหนือ ครั้งที่ 37 ปี 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0105.jpg" alt="กิจกรรม 9" onclick="openLightbox(this.src,'สมาชิกทีมเจ้าภาพจัดโครงการค่ายอาสาพัฒนา มหาวิทยาลัยราชภัฏกลุ่มภาคเหนือ ครั้งที่ 37 ปี 2567')">
+          <img loading="lazy" decoding="async" src="images/img_0106.jpg" alt="กิจกรรม 10" onclick="openLightbox(this.src,'สมาชิกทีมเจ้าภาพจัดโครงการค่ายอาสาพัฒนา มหาวิทยาลัยราชภัฏกลุ่มภาคเหนือ ครั้งที่ 37 ปี 2567')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,4)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,5)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,6)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,7)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,8)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,9)"></span>
+          </div>
+          <div class="wc-count">10 รูป</div>
+        </div>
+        <div class="role-org">
+          <div class="yr">ปี 2567</div>
+          <div class="ttl">ทีมเจ้าภาพค่ายอาสาพัฒนา ราชภัฏกลุ่มภาคเหนือ ครั้งที่ 37</div>
+          <div class="org">มหาวิทยาลัยราชภัฏภาคเหนือ (หมุนเวียนเจ้าภาพ 8 ราชภัฏ)</div>
+        </div>
+        <ul class="role-duties">
+          <li>ร่วมออกแบบรูปแบบของกิจกรรมระยะเวลา 5 วัน 4 คืน</li>
+          <li>สำรวจสถานที่ดำเนินการพัฒนา เพื่องานเผยแพร่สิ่งที่ต้องดำเนินการต่อไป</li>
+          <li>ดูแล ควบคุม อำนวยความสะดวกแก่สมาชิกที่เข้าร่วมโครงการ</li>
+          <li>ดำเนินกิจกรรมให้เป็นไปตามกำหนดการที่วางไว้ (ปลูกป่า, จุด BBL, ให้ความรู้เรื่องไฟป่าและหมอกควัน)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEACHING PRACTICUM ================= -->
+<section class="section alt" id="teaching">
+  <div class="section-blob" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">ผลงานทางวิชาชีพครูและวิชาเอก</div>
+      <h2 class="section-title">การฝึกประสบการณ์วิชาชีพครู</h2>
+      <p class="section-sub">ฝึกปฏิบัติงานจริงในสถานศึกษา 4 แห่ง ตั้งแต่การสังเกตการสอนจนถึงการรับผิดชอบชั้นเรียนเต็มรูปแบบ — คลิกแต่ละรายการเพื่อดูรายละเอียด</p>
+    </div>
+
+    <div class="prac-list reveal" id="pracList">
+      <div class="prac-item">
+        <div class="prac-head">
+          <div class="prac-head-left">
+            <div class="prac-num">01</div>
+            <div><div class="yr">ปีการศึกษา 2565 · สังเกตการสอน</div><div class="school">โรงเรียนศรีสำโรงชนูปถัมภ์ อ.ศรีสำโรง จ.สุโขทัย</div></div>
+          </div>
+          <svg class="prac-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="prac-body">
+          <div class="prac-inner">
+            <ul>
+              <li>จัดทำ Case Study นักเรียน</li>
+              <li>สังเกตและบันทึกการสอนของครูพี่เลี้ยง รวมถึงช่วยเหลืองานสอน</li>
+              <li>จัดทำบอร์ดนิเทศให้ความรู้</li>
+            </ul>
+            <div class="prac-photos">
+              <img loading="lazy" decoding="async" src="images/img_0107.jpg" alt="" onclick="openLightbox(this.src,'สังเกตการสอน ปีการศึกษา 2565 โรงเรียนศรีสำโรงชนูปถัมภ์')">
+              <img loading="lazy" decoding="async" src="images/img_0108.jpg" alt="" onclick="openLightbox(this.src,'สังเกตการสอน ปีการศึกษา 2565 โรงเรียนศรีสำโรงชนูปถัมภ์')">
+              <img loading="lazy" decoding="async" src="images/img_0109.jpg" alt="" onclick="openLightbox(this.src,'สังเกตการสอน ปีการศึกษา 2565 โรงเรียนศรีสำโรงชนูปถัมภ์')">
+              <img loading="lazy" decoding="async" src="images/img_0110.jpg" alt="" onclick="openLightbox(this.src,'สังเกตการสอน ปีการศึกษา 2565 โรงเรียนศรีสำโรงชนูปถัมภ์')">
+              <img loading="lazy" decoding="async" src="images/img_0111.jpg" alt="" onclick="openLightbox(this.src,'สังเกตการสอน ปีการศึกษา 2565 โรงเรียนศรีสำโรงชนูปถัมภ์')">
+              <img loading="lazy" decoding="async" src="images/img_0112.jpg" alt="" onclick="openLightbox(this.src,'สังเกตการสอน ปีการศึกษา 2565 โรงเรียนศรีสำโรงชนูปถัมภ์')">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prac-item">
+        <div class="prac-head">
+          <div class="prac-head-left">
+            <div class="prac-num">02</div>
+            <div><div class="yr">ปีการศึกษา 2566 · ปฏิบัติการสอน 1 เดือน (หัวหน้าหน่วยฝึก)</div><div class="school">โรงเรียนบ้านวังโป่ง อ.เมือง จ.อุตรดิตถ์</div></div>
+          </div>
+          <svg class="prac-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="prac-body">
+          <div class="prac-inner">
+            <ul>
+              <li>รับผิดชอบการจัดการเรียนการสอนรายวิชาภาษาไทย ภาคเรียนที่ 1 ระยะเวลา 1 เดือน สำหรับนักเรียนชั้นมัธยมศึกษาปีที่ 4 และ 6 รวม 3 ห้องเรียน</li>
+              <li>เป็นผู้ช่วยจัดกิจกรรมพัฒนาผู้เรียน ลูกเสือ-เนตรนารี และกิจกรรมสวดมนต์</li>
+            </ul>
+            <div class="prac-photos">
+              <img loading="lazy" decoding="async" src="images/img_0113.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2566 โรงเรียนบ้านวังโป่ง (หัวหน้าหน่วยฝึก)')">
+              <img loading="lazy" decoding="async" src="images/img_0114.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2566 โรงเรียนบ้านวังโป่ง (หัวหน้าหน่วยฝึก)')">
+              <img loading="lazy" decoding="async" src="images/img_0115.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2566 โรงเรียนบ้านวังโป่ง (หัวหน้าหน่วยฝึก)')">
+              <img loading="lazy" decoding="async" src="images/img_0116.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2566 โรงเรียนบ้านวังโป่ง (หัวหน้าหน่วยฝึก)')">
+              <img loading="lazy" decoding="async" src="images/img_0117.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2566 โรงเรียนบ้านวังโป่ง (หัวหน้าหน่วยฝึก)')">
+              <img loading="lazy" decoding="async" src="images/img_0118.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2566 โรงเรียนบ้านวังโป่ง (หัวหน้าหน่วยฝึก)')">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prac-item">
+        <div class="prac-head">
+          <div class="prac-head-left">
+            <div class="prac-num">03</div>
+            <div><div class="yr">ปีการศึกษา 2567 · ปฏิบัติการสอน 1 เดือน (หัวหน้าหน่วยฝึก)</div><div class="school">โรงเรียนไทยรัฐวิทยา 5 อ.เมือง จ.อุตรดิตถ์</div></div>
+          </div>
+          <svg class="prac-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="prac-body">
+          <div class="prac-inner">
+            <ul>
+              <li>รับผิดชอบการจัดการเรียนการสอนรายวิชาภาษาไทย ภาคเรียนที่ 2 ระยะเวลา 1 เดือน สำหรับนักเรียนชั้นมัธยมศึกษาปีที่ 1 และ 2 รวม 2 ห้องเรียน</li>
+              <li>เป็นผู้ช่วยจัดกิจกรรมพัฒนาผู้เรียน ลูกเสือ-เนตรนารี</li>
+            </ul>
+            <div class="prac-photos">
+              <img loading="lazy" decoding="async" src="images/img_0119.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2567 โรงเรียนไทยรัฐวิทยา 5 (หัวหน้าหน่วยฝึก)')">
+              <img loading="lazy" decoding="async" src="images/img_0120.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2567 โรงเรียนไทยรัฐวิทยา 5 (หัวหน้าหน่วยฝึก)')">
+              <img loading="lazy" decoding="async" src="images/img_0121.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2567 โรงเรียนไทยรัฐวิทยา 5 (หัวหน้าหน่วยฝึก)')">
+              <img loading="lazy" decoding="async" src="images/img_0122.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2567 โรงเรียนไทยรัฐวิทยา 5 (หัวหน้าหน่วยฝึก)')">
+              <img loading="lazy" decoding="async" src="images/img_0123.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2567 โรงเรียนไทยรัฐวิทยา 5 (หัวหน้าหน่วยฝึก)')">
+              <img loading="lazy" decoding="async" src="images/img_0124.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2567 โรงเรียนไทยรัฐวิทยา 5 (หัวหน้าหน่วยฝึก)')">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prac-item open">
+        <div class="prac-head">
+          <div class="prac-head-left">
+            <div class="prac-num">04</div>
+            <div><div class="yr">ปีการศึกษา 2568 · ปฏิบัติการสอน 1 ภาคเรียน</div><div class="school">โรงเรียนอุตรดิตถ์ดรุณี อ.เมือง จ.อุตรดิตถ์</div></div>
+          </div>
+          <svg class="prac-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="prac-body">
+          <div class="prac-inner">
+            <ul>
+              <li>รับหน้าที่ครูประจำชั้นมัธยมศึกษาปีที่ 3 ห้อง 11</li>
+              <li>รับผิดชอบการสอนรายวิชาภาษาไทย ภาคเรียนที่ 1 สำหรับนักเรียนชั้นมัธยมศึกษาปีที่ 3 ห้อง 5, 6, 9 และ 10 รวม 4 ห้องเรียน 12 ชั่วโมง/สัปดาห์</li>
+              <li>เป็นผู้ช่วยจัดกิจกรรมพัฒนาผู้เรียน คุณธรรมจริยธรรม</li>
+              <li>ปฏิบัติงานตามกลุ่มบริหารของโรงเรียน 4 กลุ่ม (วิชาการ งบประมาณ บุคคล ทั่วไป) กลุ่มละ 1 เดือน รวมระยะเวลา 4 เดือน</li>
+            </ul>
+            <div class="prac-photos">
+              <img loading="lazy" decoding="async" src="images/img_0125.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2568 โรงเรียนอุตรดิตถ์ดรุณี')">
+              <img loading="lazy" decoding="async" src="images/img_0126.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2568 โรงเรียนอุตรดิตถ์ดรุณี')">
+              <img loading="lazy" decoding="async" src="images/img_0127.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2568 โรงเรียนอุตรดิตถ์ดรุณี')">
+              <img loading="lazy" decoding="async" src="images/img_0128.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2568 โรงเรียนอุตรดิตถ์ดรุณี')">
+              <img loading="lazy" decoding="async" src="images/img_0129.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2568 โรงเรียนอุตรดิตถ์ดรุณี')">
+              <img loading="lazy" decoding="async" src="images/img_0130.jpg" alt="" onclick="openLightbox(this.src,'ปฏิบัติการสอน ปีการศึกษา 2568 โรงเรียนอุตรดิตถ์ดรุณี')">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head reveal" style="margin-top:60px;margin-bottom:26px;">
+      <div class="eyebrow">งานวิจัยและนวัตกรรมการสอน</div>
+      <h2 class="section-title" style="font-size:26px;">การผลิตสื่อ นวัตกรรม และการจัดการเรียนรู้เชิงรุก</h2>
+    </div>
+    <div class="work-grid reveal">
+
+      <!-- M1: วิจัยในชั้นเรียน - 3 images -->
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0131.jpg" alt="วิจัยในชั้นเรียน 1" onclick="openLightbox(this.src,'วิจัยในชั้นเรียน: การพัฒนาความสามารถด้านการอ่านจับใจความ โดยใช้ชุดแบบฝึกการอ่านจับใจความสำคัญ ของนักเรียนชั้นมัธยมศึกษาปีที่ 3 โรงเรียนอุตรดิตถ์ดรุณี')">
+          <img loading="lazy" decoding="async" src="images/img_0132.jpg" alt="วิจัยในชั้นเรียน 2" onclick="openLightbox(this.src,'วิจัยในชั้นเรียน: การพัฒนาความสามารถด้านการอ่านจับใจความ โดยใช้ชุดแบบฝึกการอ่านจับใจความสำคัญ ของนักเรียนชั้นมัธยมศึกษาปีที่ 3 โรงเรียนอุตรดิตถ์ดรุณี')">
+          <img loading="lazy" decoding="async" src="images/img_0133.jpg" alt="วิจัยในชั้นเรียน 3" onclick="openLightbox(this.src,'วิจัยในชั้นเรียน: การพัฒนาความสามารถด้านการอ่านจับใจความ โดยใช้ชุดแบบฝึกการอ่านจับใจความสำคัญ ของนักเรียนชั้นมัธยมศึกษาปีที่ 3 โรงเรียนอุตรดิตถ์ดรุณี')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+          </div>
+          <div class="wc-count">3 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">วิจัยในชั้นเรียน</span>
+          <div class="work-title">การพัฒนาความสามารถด้านการอ่านจับใจความ</div>
+          <div class="work-desc">โดยใช้ชุดแบบฝึกการอ่านจับใจความสำคัญ ของนักเรียนระดับชั้นมัธยมศึกษาปีที่ 3 โรงเรียนอุตรดิตถ์ดรุณี</div>
+        </div>
+      </div>
+
+      <!-- M2: Liveworksheets - 6 images -->
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0134.jpg" alt="Liveworksheets 1" onclick="openLightbox(this.src,'เว็บไซต์ ห้องเรียนภาษาไทย ครูตั้ว ใช้ระบบ Liveworksheets ทำใบงานและเก็บคะแนน')">
+          <img loading="lazy" decoding="async" src="images/img_0135.jpg" alt="Liveworksheets 2" onclick="openLightbox(this.src,'เว็บไซต์ ห้องเรียนภาษาไทย ครูตั้ว ใช้ระบบ Liveworksheets ทำใบงานและเก็บคะแนน')">
+          <img loading="lazy" decoding="async" src="images/img_0136.jpg" alt="Liveworksheets 3" onclick="openLightbox(this.src,'เว็บไซต์ ห้องเรียนภาษาไทย ครูตั้ว ใช้ระบบ Liveworksheets ทำใบงานและเก็บคะแนน')">
+          <img loading="lazy" decoding="async" src="images/img_0137.jpg" alt="Liveworksheets 4" onclick="openLightbox(this.src,'เว็บไซต์ ห้องเรียนภาษาไทย ครูตั้ว ใช้ระบบ Liveworksheets ทำใบงานและเก็บคะแนน')">
+          <img loading="lazy" decoding="async" src="images/img_0138.jpg" alt="Liveworksheets 5" onclick="openLightbox(this.src,'เว็บไซต์ ห้องเรียนภาษาไทย ครูตั้ว ใช้ระบบ Liveworksheets ทำใบงานและเก็บคะแนน')">
+          <img loading="lazy" decoding="async" src="images/img_0139.jpg" alt="Liveworksheets 6" onclick="openLightbox(this.src,'เว็บไซต์ ห้องเรียนภาษาไทย ครูตั้ว ใช้ระบบ Liveworksheets ทำใบงานและเก็บคะแนน')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,4)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,5)"></span>
+          </div>
+          <div class="wc-count">6 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">สื่อและนวัตกรรมการสอน</span>
+          <div class="work-title">เว็บไซต์ "ห้องเรียนภาษาไทย ครูตั้ว"</div>
+          <div class="work-desc">ใช้ระบบ Liveworksheets ทำใบงานและสอบเก็บคะแนนบางส่วน สะดวกต่อทั้งผู้สอนและผู้เรียน นักเรียนตรวจสอบภาระงานและคะแนนของตนเองได้ ครูผู้สอนตรวจสอบภาระงานของนักเรียนทุกคนได้เช่นกัน</div>
+        </div>
+      </div>
+
+      <!-- M3: Google Site / ตารางส่งงาน - 1 image -->
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0140.jpg" alt="ตารางติดตามการส่งงาน" onclick="openLightbox(this.src,'เว็บไซต์ Google Site สำหรับสื่อการสอนและใบงาน พร้อมตารางตรวจสอบการส่งงานของนักเรียนทุกคน')">
+        </div>
+        <div class="work-body">
+          <span class="work-date">สื่อและนวัตกรรมการสอน</span>
+          <div class="work-title">เว็บไซต์ Google Site และระบบติดตามการส่งงาน</div>
+          <div class="work-desc">ใช้ระบบ Google Site ทำเว็บไซต์ให้นักเรียนดูสื่อการสอนที่ใช้ในคาบเรียน ดาวน์โหลดใบงานมาพิมพ์เองได้ รวมถึงตรวจสอบการส่งงานทุกชิ้นได้</div>
+        </div>
+      </div>
+
+      <!-- M4: Active Learning - 12 images -->
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0141.jpg" alt="Active Learning 1" onclick="openLightbox(this.src,'การจัดกิจกรรมการเรียนรู้เชิงรุก (Active Learning) เน้นแลกเปลี่ยนความคิดเป็นกลุ่มและสรุปความรู้ด้วย Mind Map')">
+          <img loading="lazy" decoding="async" src="images/img_0142.jpg" alt="Active Learning 2" onclick="openLightbox(this.src,'การจัดกิจกรรมการเรียนรู้เชิงรุก (Active Learning) เน้นแลกเปลี่ยนความคิดเป็นกลุ่มและสรุปความรู้ด้วย Mind Map')">
+          <img loading="lazy" decoding="async" src="images/img_0143.jpg" alt="Active Learning 3" onclick="openLightbox(this.src,'การจัดกิจกรรมการเรียนรู้เชิงรุก (Active Learning) เน้นแลกเปลี่ยนความคิดเป็นกลุ่มและสรุปความรู้ด้วย Mind Map')">
+          <img loading="lazy" decoding="async" src="images/img_0144.jpg" alt="Active Learning 4" onclick="openLightbox(this.src,'การจัดกิจกรรมการเรียนรู้เชิงรุก (Active Learning) เน้นแลกเปลี่ยนความคิดเป็นกลุ่มและสรุปความรู้ด้วย Mind Map')">
+          <img loading="lazy" decoding="async" src="images/img_0145.jpg" alt="Active Learning 5" onclick="openLightbox(this.src,'การจัดกิจกรรมการเรียนรู้เชิงรุก (Active Learning) เน้นแลกเปลี่ยนความคิดเป็นกลุ่มและสรุปความรู้ด้วย Mind Map')">
+          <img loading="lazy" decoding="async" src="images/img_0146.jpg" alt="Active Learning 6" onclick="openLightbox(this.src,'การจัดกิจกรรมการเรียนรู้เชิงรุก (Active Learning) เน้นแลกเปลี่ยนความคิดเป็นกลุ่มและสรุปความรู้ด้วย Mind Map')">
+          <img loading="lazy" decoding="async" src="images/img_0147.jpg" alt="ผลงานสรุปความรู้ 1" onclick="openLightbox(this.src,'ผลงานสรุปความรู้ของนักเรียนด้วย Mind Map จากกิจกรรม Active Learning')">
+          <img loading="lazy" decoding="async" src="images/img_0148.jpg" alt="ผลงานสรุปความรู้ 2" onclick="openLightbox(this.src,'ผลงานสรุปความรู้ของนักเรียนด้วย Mind Map จากกิจกรรม Active Learning')">
+          <img loading="lazy" decoding="async" src="images/img_0149.jpg" alt="ผลงานสรุปความรู้ 3" onclick="openLightbox(this.src,'ผลงานสรุปความรู้ของนักเรียนด้วย Mind Map จากกิจกรรม Active Learning')">
+          <img loading="lazy" decoding="async" src="images/img_0150.jpg" alt="ผลงานสรุปความรู้ 4" onclick="openLightbox(this.src,'ผลงานสรุปความรู้ของนักเรียนด้วย Mind Map จากกิจกรรม Active Learning')">
+          <img loading="lazy" decoding="async" src="images/img_0151.jpg" alt="ผลงานสรุปความรู้ 5" onclick="openLightbox(this.src,'ผลงานสรุปความรู้ของนักเรียนด้วย Mind Map จากกิจกรรม Active Learning')">
+          <img loading="lazy" decoding="async" src="images/img_0152.jpg" alt="ผลงานสรุปความรู้ 6" onclick="openLightbox(this.src,'ผลงานสรุปความรู้ของนักเรียนด้วย Mind Map จากกิจกรรม Active Learning')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,4)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,5)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,6)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,7)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,8)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,9)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,10)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,11)"></span>
+          </div>
+          <div class="wc-count">12 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">การจัดการเรียนรู้</span>
+          <div class="work-title">กิจกรรมการเรียนรู้เชิงรุก (Active Learning)</div>
+          <div class="work-desc">เน้นการศึกษาหาความรู้แบบแลกเปลี่ยนความคิดด้วยกระบวนการกลุ่มเป็นหลัก โดยมีผู้สอนคอยชี้แนะให้ข้อมูลถูกต้องครบถ้วน และให้ผู้เรียนสรุปความรู้เมื่อจบคาบเรียนหรือจบหน่วยการเรียนรู้ตามความเข้าใจแบบอิสระด้วยความคิดสร้างสรรค์</div>
+        </div>
+      </div>
+
+      <!-- M5: แผนการจัดการเรียนรู้ - 5 images -->
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0153.jpg" alt="แผนการจัดการเรียนรู้ 1" onclick="openLightbox(this.src,'การออกแบบแผนการจัดการเรียนรู้ วิชาภาษาไทย')">
+          <img loading="lazy" decoding="async" src="images/img_0154.jpg" alt="แผนการจัดการเรียนรู้ 2" onclick="openLightbox(this.src,'การออกแบบแผนการจัดการเรียนรู้ วิชาภาษาไทย')">
+          <img loading="lazy" decoding="async" src="images/img_0155.jpg" alt="แผนการจัดการเรียนรู้ 3" onclick="openLightbox(this.src,'การออกแบบแผนการจัดการเรียนรู้ วิชาภาษาไทย')">
+          <img loading="lazy" decoding="async" src="images/img_0156.jpg" alt="แผนการจัดการเรียนรู้ 4" onclick="openLightbox(this.src,'การออกแบบแผนการจัดการเรียนรู้ วิชาภาษาไทย')">
+          <img loading="lazy" decoding="async" src="images/img_0157.jpg" alt="ตัวอย่างแผนการจัดการเรียนรู้ฉบับเต็ม" onclick="openLightbox(this.src,'ตัวอย่างแผนการจัดการเรียนรู้ฉบับเต็ม เรื่อง กวีโวหารศิลปะแห่งการเรียงร้อยคำ')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,4)"></span>
+          </div>
+          <div class="wc-count">5 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">การออกแบบสื่อการสอน</span>
+          <div class="work-title">การออกแบบแผนการจัดการเรียนรู้</div>
+          <div class="work-desc">ออกแบบแผนการจัดการเรียนรู้รายวิชาภาษาไทยหลายหน่วยการเรียนรู้ ครบทั้งมาตรฐาน ตัวชี้วัด จุดประสงค์ และสาระสำคัญ</div>
+        </div>
+      </div>
+
+      <!-- M6: สื่อการจัดการเรียนรู้ - 9 images -->
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0158.jpg" alt="สื่อการสอน 1" onclick="openLightbox(this.src,'การออกแบบสื่อการจัดการเรียนรู้ภาษาไทย')">
+          <img loading="lazy" decoding="async" src="images/img_0159.jpg" alt="สื่อการสอน 5" onclick="openLightbox(this.src,'การออกแบบสื่อการจัดการเรียนรู้ภาษาไทย')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">การออกแบบสื่อการสอน</span>
+          <div class="work-title">การออกแบบสื่อการจัดการเรียนรู้</div>
+          <div class="work-desc">ออกแบบสื่ออินโฟกราฟิกหัวข้อภาษาไทย เช่น ร้อยแก้ว คำทับศัพท์และศัพท์บัญญัติ โวหารภาพพจน์ ความหมายโดยตรง-โดยนัย หลักการใช้พจนานุกรม หลักการคัดลายมือ การถอดคำประพันธ์ การท่องบทอาขยาน และภาษาโฆษณา</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-head reveal" id="schoolactivities" style="margin-top:60px;margin-bottom:26px;">
+      <div class="eyebrow">ผลงานระดับโรงเรียนและการปฏิบัติวิชาชีพครู</div>
+      <h2 class="section-title" style="font-size:26px;">การจัดกิจกรรมและการเข้าร่วมกิจกรรมของโรงเรียน</h2>
+      <p class="section-sub">ภาพความรับผิดชอบและการมีส่วนร่วมในกิจกรรมต่างๆ ของโรงเรียนตลอดระยะเวลาการฝึกประสบการณ์วิชาชีพครู ทั้งงานวิชาการ งานกิจกรรมนักเรียน และงานสนับสนุนอื่น ๆ</p>
+    </div>
+
+    <div class="work-grid reveal">
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0160.jpg" alt="หัวหน้าทีมจัดโครงการพัฒนาทักษะการอ่าน-เขียน 1" onclick="openLightbox(this.src,'เพื่อยกระดับผลสัมฤทธิ์ทางการเรียน ณ โรงเรียนบ้านวังโป่ง')">
+          <img loading="lazy" decoding="async" src="images/img_0161.jpg" alt="หัวหน้าทีมจัดโครงการพัฒนาทักษะการอ่าน-เขียน 2" onclick="openLightbox(this.src,'เพื่อยกระดับผลสัมฤทธิ์ทางการเรียน ณ โรงเรียนบ้านวังโป่ง')">
+          <img loading="lazy" decoding="async" src="images/img_0162.jpg" alt="หัวหน้าทีมจัดโครงการพัฒนาทักษะการอ่าน-เขียน 3" onclick="openLightbox(this.src,'เพื่อยกระดับผลสัมฤทธิ์ทางการเรียน ณ โรงเรียนบ้านวังโป่ง')">
+          <img loading="lazy" decoding="async" src="images/img_0163.jpg" alt="หัวหน้าทีมจัดโครงการพัฒนาทักษะการอ่าน-เขียน 4" onclick="openLightbox(this.src,'เพื่อยกระดับผลสัมฤทธิ์ทางการเรียน ณ โรงเรียนบ้านวังโป่ง')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+          </div>
+          <div class="wc-count">4 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">โรงเรียนบ้านวังโป่ง</span>
+          <div class="work-title">หัวหน้าทีมจัดโครงการพัฒนาทักษะการอ่าน-เขียน</div>
+          <div class="work-desc">เพื่อยกระดับผลสัมฤทธิ์ทางการเรียน ณ โรงเรียนบ้านวังโป่ง</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0164.jpg" alt="หัวหน้าทีมจัดโครงการ เดินรอบเดียว Get รอบรู้ 1" onclick="openLightbox(this.src,'เป็นหัวหน้าทีมจัดโครงการ เดินรอบเดียว Get รอบรู้ ณ โรงเรียนไทยรัฐวิทยา 5')">
+          <img loading="lazy" decoding="async" src="images/img_0165.jpg" alt="หัวหน้าทีมจัดโครงการ เดินรอบเดียว Get รอบรู้ 2" onclick="openLightbox(this.src,'เป็นหัวหน้าทีมจัดโครงการ เดินรอบเดียว Get รอบรู้ ณ โรงเรียนไทยรัฐวิทยา 5')">
+          <img loading="lazy" decoding="async" src="images/img_0166.jpg" alt="หัวหน้าทีมจัดโครงการ เดินรอบเดียว Get รอบรู้ 3" onclick="openLightbox(this.src,'เป็นหัวหน้าทีมจัดโครงการ เดินรอบเดียว Get รอบรู้ ณ โรงเรียนไทยรัฐวิทยา 5')">
+          <img loading="lazy" decoding="async" src="images/img_0167.jpg" alt="หัวหน้าทีมจัดโครงการ เดินรอบเดียว Get รอบรู้ 4" onclick="openLightbox(this.src,'เป็นหัวหน้าทีมจัดโครงการ เดินรอบเดียว Get รอบรู้ ณ โรงเรียนไทยรัฐวิทยา 5')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+          </div>
+          <div class="wc-count">4 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">โรงเรียนไทยรัฐวิทยา 5</span>
+          <div class="work-title">หัวหน้าทีมจัดโครงการ เดินรอบเดียว Get รอบรู้</div>
+          <div class="work-desc">เป็นหัวหน้าทีมจัดโครงการ เดินรอบเดียว Get รอบรู้ ณ โรงเรียนไทยรัฐวิทยา 5</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0168.jpg" alt="ดูแลกิจกรรมทำพานและประกวดพานก่อนวันไหว้ครู 1" onclick="openLightbox(this.src,'ดูแลความเรียบร้อยกิจกรรมทำพานและประกวดพานก่อนวันไหว้ครู')">
+          <img loading="lazy" decoding="async" src="images/img_0169.jpg" alt="ดูแลกิจกรรมทำพานและประกวดพานก่อนวันไหว้ครู 2" onclick="openLightbox(this.src,'ดูแลความเรียบร้อยกิจกรรมทำพานและประกวดพานก่อนวันไหว้ครู')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">ดูแลกิจกรรมทำพานและประกวดพานก่อนวันไหว้ครู</div>
+          <div class="work-desc">ดูแลความเรียบร้อยกิจกรรมทำพานและประกวดพานก่อนวันไหว้ครู</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0170.jpg" alt="เข้าร่วมพิธีไหว้ครู 1" onclick="openLightbox(this.src,'เข้าร่วมพิธีไหว้ครู')">
+          <img loading="lazy" decoding="async" src="images/img_0171.jpg" alt="เข้าร่วมพิธีไหว้ครู 2" onclick="openLightbox(this.src,'เข้าร่วมพิธีไหว้ครู')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">เข้าร่วมพิธีไหว้ครู</div>
+          <div class="work-desc">เข้าร่วมพิธีไหว้ครู</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0172.jpg" alt="ขับเสภา แสดงละครสั้น กิจกรรมวันสุนทรภู่ 1" onclick="openLightbox(this.src,'ขับเสภา แสดงละครสั้น และดำเนินกิจกรรมวันสุนทรภู่')">
+          <img loading="lazy" decoding="async" src="images/img_0173.jpg" alt="ขับเสภา แสดงละครสั้น กิจกรรมวันสุนทรภู่ 2" onclick="openLightbox(this.src,'ขับเสภา แสดงละครสั้น และดำเนินกิจกรรมวันสุนทรภู่')">
+          <img loading="lazy" decoding="async" src="images/img_0174.jpg" alt="ขับเสภา แสดงละครสั้น กิจกรรมวันสุนทรภู่ 3" onclick="openLightbox(this.src,'ขับเสภา แสดงละครสั้น และดำเนินกิจกรรมวันสุนทรภู่')">
+          <img loading="lazy" decoding="async" src="images/img_0175.jpg" alt="ขับเสภา แสดงละครสั้น กิจกรรมวันสุนทรภู่ 4" onclick="openLightbox(this.src,'ขับเสภา แสดงละครสั้น และดำเนินกิจกรรมวันสุนทรภู่')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+          </div>
+          <div class="wc-count">4 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">ขับเสภา แสดงละครสั้น กิจกรรมวันสุนทรภู่</div>
+          <div class="work-desc">ขับเสภา แสดงละครสั้น และดำเนินกิจกรรมวันสุนทรภู่</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0176.jpg" alt="จัดกิจกรรมปฐมนิเทศนักเรียน ม.3 และ ม.4 1" onclick="openLightbox(this.src,'จัดกิจกรรมปฐมนิเทศนักเรียนชั้นมัธยมศึกษาปีที่ 3 และ 4')">
+          <img loading="lazy" decoding="async" src="images/img_0177.jpg" alt="จัดกิจกรรมปฐมนิเทศนักเรียน ม.3 และ ม.4 2" onclick="openLightbox(this.src,'จัดกิจกรรมปฐมนิเทศนักเรียนชั้นมัธยมศึกษาปีที่ 3 และ 4')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">จัดกิจกรรมปฐมนิเทศนักเรียน ม.3 และ ม.4</div>
+          <div class="work-desc">จัดกิจกรรมปฐมนิเทศนักเรียนชั้นมัธยมศึกษาปีที่ 3 และ 4</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0178.jpg" alt="ประชาสัมพันธ์บ้าน-โรงเรียน เตรียมเปิดภาคเรียน 1" onclick="openLightbox(this.src,'ดำเนินกิจกรรมประชาสัมพันธ์บ้าน-โรงเรียน เพื่อเตรียมความพร้อมเปิดภาคเรียน')">
+          <img loading="lazy" decoding="async" src="images/img_0179.jpg" alt="ประชาสัมพันธ์บ้าน-โรงเรียน เตรียมเปิดภาคเรียน 2" onclick="openLightbox(this.src,'ดำเนินกิจกรรมประชาสัมพันธ์บ้าน-โรงเรียน เพื่อเตรียมความพร้อมเปิดภาคเรียน')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">ประชาสัมพันธ์บ้าน-โรงเรียน เตรียมเปิดภาคเรียน</div>
+          <div class="work-desc">ดำเนินกิจกรรมประชาสัมพันธ์บ้าน-โรงเรียน เพื่อเตรียมความพร้อมเปิดภาคเรียน</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0180.jpg" alt="เข้าร่วมพิธีเปิดยุวกาชาด ชั้นมัธยมศึกษาปีที่ 3 1" onclick="openLightbox(this.src,'เข้าร่วมพิธีเปิดยุวกาชาด ชั้นมัธยมศึกษาปีที่ 3')">
+          <img loading="lazy" decoding="async" src="images/img_0181.jpg" alt="เข้าร่วมพิธีเปิดยุวกาชาด ชั้นมัธยมศึกษาปีที่ 3 2" onclick="openLightbox(this.src,'เข้าร่วมพิธีเปิดยุวกาชาด ชั้นมัธยมศึกษาปีที่ 3')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">เข้าร่วมพิธีเปิดยุวกาชาด ชั้นมัธยมศึกษาปีที่ 3</div>
+          <div class="work-desc">เข้าร่วมพิธีเปิดยุวกาชาด ชั้นมัธยมศึกษาปีที่ 3</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0182.jpg" alt="ประชุมผู้ปกครองชั้นมัธยมศึกษาปีที่ 3/11 1" onclick="openLightbox(this.src,'ประชุมผู้ปกครองชั้นมัธยมศึกษาปีที่ 3/11')">
+          <img loading="lazy" decoding="async" src="images/img_0183.jpg" alt="ประชุมผู้ปกครองชั้นมัธยมศึกษาปีที่ 3/11 2" onclick="openLightbox(this.src,'ประชุมผู้ปกครองชั้นมัธยมศึกษาปีที่ 3/11')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">ประชุมผู้ปกครองชั้นมัธยมศึกษาปีที่ 3/11</div>
+          <div class="work-desc">ประชุมผู้ปกครองชั้นมัธยมศึกษาปีที่ 3/11</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0184.jpg" alt="ดูแลกิจกรรมติว A-Level ม.5 และ ม.6 1" onclick="openLightbox(this.src,'ดูแลความเรียบร้อย แจกอาหารว่างในกิจกรรมติว A-Level ของนักเรียนชั้นมัธยมศึกษาปีที่ 5 และ 6')">
+          <img loading="lazy" decoding="async" src="images/img_0185.jpg" alt="ดูแลกิจกรรมติว A-Level ม.5 และ ม.6 2" onclick="openLightbox(this.src,'ดูแลความเรียบร้อย แจกอาหารว่างในกิจกรรมติว A-Level ของนักเรียนชั้นมัธยมศึกษาปีที่ 5 และ 6')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">ดูแลกิจกรรมติว A-Level ม.5 และ ม.6</div>
+          <div class="work-desc">ดูแลความเรียบร้อย แจกอาหารว่างในกิจกรรมติว A-Level ของนักเรียนชั้นมัธยมศึกษาปีที่ 5 และ 6</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0186.jpg" alt="ถวายเทียนวันเข้าพรรษา 1" onclick="openLightbox(this.src,'ถวายเทียนวันเข้าพรรษา รับหน้าที่ดูแลความเรียบร้อยและช่วยงานทั่วไป')">
+          <img loading="lazy" decoding="async" src="images/img_0187.jpg" alt="ถวายเทียนวันเข้าพรรษา 2" onclick="openLightbox(this.src,'ถวายเทียนวันเข้าพรรษา รับหน้าที่ดูแลความเรียบร้อยและช่วยงานทั่วไป')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">ถวายเทียนวันเข้าพรรษา</div>
+          <div class="work-desc">ถวายเทียนวันเข้าพรรษา รับหน้าที่ดูแลความเรียบร้อยและช่วยงานทั่วไป</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0188.jpg" alt="ตรวจการแต่งคำประพันธ์ ค่ายดรุณี ศรีภาษา 1" onclick="openLightbox(this.src,'ดูแลความเรียบร้อย ตรวจการแต่งคำประพันธ์ในโครงการค่ายดรุณี ศรีภาษา')">
+          <img loading="lazy" decoding="async" src="images/img_0189.jpg" alt="ตรวจการแต่งคำประพันธ์ ค่ายดรุณี ศรีภาษา 2" onclick="openLightbox(this.src,'ดูแลความเรียบร้อย ตรวจการแต่งคำประพันธ์ในโครงการค่ายดรุณี ศรีภาษา')">
+          <img loading="lazy" decoding="async" src="images/img_0190.jpg" alt="ตรวจการแต่งคำประพันธ์ ค่ายดรุณี ศรีภาษา 3" onclick="openLightbox(this.src,'ดูแลความเรียบร้อย ตรวจการแต่งคำประพันธ์ในโครงการค่ายดรุณี ศรีภาษา')">
+          <img loading="lazy" decoding="async" src="images/img_0191.jpg" alt="ตรวจการแต่งคำประพันธ์ ค่ายดรุณี ศรีภาษา 4" onclick="openLightbox(this.src,'ดูแลความเรียบร้อย ตรวจการแต่งคำประพันธ์ในโครงการค่ายดรุณี ศรีภาษา')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+          </div>
+          <div class="wc-count">4 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">ตรวจการแต่งคำประพันธ์ ค่ายดรุณี ศรีภาษา</div>
+          <div class="work-desc">ดูแลความเรียบร้อย ตรวจการแต่งคำประพันธ์ในโครงการค่ายดรุณี ศรีภาษา</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0192.jpg" alt="พัฒนาทักษะชีวิตที่พอเพียง 1" onclick="openLightbox(this.src,'สันทนาการ ช่วยเหลือ และดูแลกิจกรรมพัฒนาทักษะชีวิตที่พอเพียง โครงการเสริมสร้างคุณธรรม จริยธรรม น้อมนำพระบรมราโชบาย')">
+          <img loading="lazy" decoding="async" src="images/img_0193.jpg" alt="พัฒนาทักษะชีวิตที่พอเพียง 2" onclick="openLightbox(this.src,'สันทนาการ ช่วยเหลือ และดูแลกิจกรรมพัฒนาทักษะชีวิตที่พอเพียง โครงการเสริมสร้างคุณธรรม จริยธรรม น้อมนำพระบรมราโชบาย')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">พัฒนาทักษะชีวิตที่พอเพียง</div>
+          <div class="work-desc">สันทนาการ ช่วยเหลือ และดูแลกิจกรรมพัฒนาทักษะชีวิตที่พอเพียง โครงการเสริมสร้างคุณธรรม จริยธรรม น้อมนำพระบรมราโชบาย</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0194.jpg" alt="ค่ายภาษาอังกฤษ English Camp 1" onclick="openLightbox(this.src,'ช่วยเหลือการจัดกิจกรรมและสันทนาการ ค่ายภาษาอังกฤษ English Camp')">
+          <img loading="lazy" decoding="async" src="images/img_0195.jpg" alt="ค่ายภาษาอังกฤษ English Camp 2" onclick="openLightbox(this.src,'ช่วยเหลือการจัดกิจกรรมและสันทนาการ ค่ายภาษาอังกฤษ English Camp')">
+          <img loading="lazy" decoding="async" src="images/img_0196.jpg" alt="ค่ายภาษาอังกฤษ English Camp 3" onclick="openLightbox(this.src,'ช่วยเหลือการจัดกิจกรรมและสันทนาการ ค่ายภาษาอังกฤษ English Camp')">
+          <img loading="lazy" decoding="async" src="images/img_0197.jpg" alt="ค่ายภาษาอังกฤษ English Camp 4" onclick="openLightbox(this.src,'ช่วยเหลือการจัดกิจกรรมและสันทนาการ ค่ายภาษาอังกฤษ English Camp')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+          </div>
+          <div class="wc-count">4 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">ค่ายภาษาอังกฤษ English Camp</div>
+          <div class="work-desc">ช่วยเหลือการจัดกิจกรรมและสันทนาการ ค่ายภาษาอังกฤษ English Camp</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0198.jpg" alt="ช่วยเหลือการจัดกิจกรรม การรู้เท่าทันสื่อ สารสนเทศ และดิจิทัล 1" onclick="openLightbox(this.src,'ช่วยเหลือการจัดกิจกรรม การรู้เท่าทันสื่อ สารสนเทศ และดิจิทัล')">
+          <img loading="lazy" decoding="async" src="images/img_0199.jpg" alt="ช่วยเหลือการจัดกิจกรรม การรู้เท่าทันสื่อ สารสนเทศ และดิจิทัล 2" onclick="openLightbox(this.src,'ช่วยเหลือการจัดกิจกรรม การรู้เท่าทันสื่อ สารสนเทศ และดิจิทัล')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">การรู้เท่าทันสื่อ สารสนเทศ และดิจิทัล</div>
+          <div class="work-desc">ช่วยเหลือการจัดกิจกรรม การรู้เท่าทันสื่อ สารสนเทศ และดิจิทัล</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0200.jpg" alt="ปฐมนิเทศนักเรียน ม.3 และ ม.4 1" onclick="openLightbox(this.src,'ดูแลความเรียบร้อยกิจกรรมปฐมนิเทศนักเรียนชั้นมัธยมศึกษาปีที่ 3 และ 4')">
+          <img loading="lazy" decoding="async" src="images/img_0201.jpg" alt="ปฐมนิเทศนักเรียน ม.3 และ ม.4 2" onclick="openLightbox(this.src,'ดูแลความเรียบร้อยกิจกรรมปฐมนิเทศนักเรียนชั้นมัธยมศึกษาปีที่ 3 และ 4')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">ปฐมนิเทศนักเรียน ม.3 และ ม.4</div>
+          <div class="work-desc">ดูแลความเรียบร้อยกิจกรรมปฐมนิเทศนักเรียนชั้นมัธยมศึกษาปีที่ 3 และ 4</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0202.jpg" alt="กรรมการแข่งขันอ่านทำนองเสนาะ วันภาษาไทยแห่งชาติ 1" onclick="openLightbox(this.src,'เป็นกรรมการการแข่งขันอ่านทำนองเสนาะและดูแลความเรียบร้อยวันภาษาไทยแห่งชาติ')">
+          <img loading="lazy" decoding="async" src="images/img_0203.jpg" alt="กรรมการแข่งขันอ่านทำนองเสนาะ วันภาษาไทยแห่งชาติ 2" onclick="openLightbox(this.src,'เป็นกรรมการการแข่งขันอ่านทำนองเสนาะและดูแลความเรียบร้อยวันภาษาไทยแห่งชาติ')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">กรรมการแข่งขันอ่านทำนองเสนาะ วันภาษาไทยแห่งชาติ</div>
+          <div class="work-desc">เป็นกรรมการการแข่งขันอ่านทำนองเสนาะและดูแลความเรียบร้อยวันภาษาไทยแห่งชาติ</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0204.jpg" alt="โครงการปลูกจิต คิดสะอาด ร่วมวาดโรงเรียนสีเขียว 1" onclick="openLightbox(this.src,'ดำเนินกิจกรรมโครงการปลูกจิต คิดสะอาด ร่วมวาดโรงเรียนสีเขียว')">
+          <img loading="lazy" decoding="async" src="images/img_0205.jpg" alt="โครงการปลูกจิต คิดสะอาด ร่วมวาดโรงเรียนสีเขียว 2" onclick="openLightbox(this.src,'ดำเนินกิจกรรมโครงการปลูกจิต คิดสะอาด ร่วมวาดโรงเรียนสีเขียว')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน (ผู้จัดกิจกรรม)</span>
+          <div class="work-title">โครงการปลูกจิต คิดสะอาด ร่วมวาดโรงเรียนสีเขียว</div>
+          <div class="work-desc">ดำเนินกิจกรรมโครงการปลูกจิต คิดสะอาด ร่วมวาดโรงเรียนสีเขียว</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0206.jpg" alt="ส่งเสริมสุขภาพชุมชน ป้องกันยุงลาย 1" onclick="openLightbox(this.src,'จัดโครงการส่งเสริมสุขภาพชุมชนผ่านการป้องกันยุงลาย ผลิตยากันยุงจากตะไคร้หอม ซึ่งเป็นภูมิปัญญาท้องถิ่น โดยได้รับความอนุเคราะห์จากวิทยากรในชุมชน')">
+          <img loading="lazy" decoding="async" src="images/img_0207.jpg" alt="ส่งเสริมสุขภาพชุมชน ป้องกันยุงลาย 2" onclick="openLightbox(this.src,'จัดโครงการส่งเสริมสุขภาพชุมชนผ่านการป้องกันยุงลาย ผลิตยากันยุงจากตะไคร้หอม ซึ่งเป็นภูมิปัญญาท้องถิ่น โดยได้รับความอนุเคราะห์จากวิทยากรในชุมชน')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานกิจกรรมโรงเรียน</span>
+          <div class="work-title">ส่งเสริมสุขภาพชุมชน ป้องกันยุงลาย</div>
+          <div class="work-desc">จัดโครงการส่งเสริมสุขภาพชุมชนผ่านการป้องกันยุงลาย ผลิตยากันยุงจากตะไคร้หอม ซึ่งเป็นภูมิปัญญาท้องถิ่น โดยได้รับความอนุเคราะห์จากวิทยากรในชุมชน</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0208.jpg" alt="ครูเวรประจำวัน ดูแลหน้าประตูโรงเรียน 1" onclick="openLightbox(this.src,'ปฏิบัติหน้าที่ครูเวรประจำวัน ดูแลความเรียบร้อยหน้าประตูโรงเรียน')">
+          <img loading="lazy" decoding="async" src="images/img_0209.jpg" alt="ครูเวรประจำวัน ดูแลหน้าประตูโรงเรียน 2" onclick="openLightbox(this.src,'ปฏิบัติหน้าที่ครูเวรประจำวัน ดูแลความเรียบร้อยหน้าประตูโรงเรียน')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">การปฏิบัติงานอื่น ๆ ในโรงเรียน</span>
+          <div class="work-title">ครูเวรประจำวัน ดูแลหน้าประตูโรงเรียน</div>
+          <div class="work-desc">ปฏิบัติหน้าที่ครูเวรประจำวัน ดูแลความเรียบร้อยหน้าประตูโรงเรียน</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0210.jpg" alt="จัดเตรียมข้อสอบ PISA 1" onclick="openLightbox(this.src,'จัดเตรียมข้อสอบ PISA ของนักเรียนชั้นมัธยมศึกษาปีที่ 3 และ 4 ทั้ง 3 วิชา และจัดข้อสอบเพื่อนำส่งห้องเรียนแต่ละห้อง')">
+          <img loading="lazy" decoding="async" src="images/img_0211.jpg" alt="จัดเตรียมข้อสอบ PISA 2" onclick="openLightbox(this.src,'จัดเตรียมข้อสอบ PISA ของนักเรียนชั้นมัธยมศึกษาปีที่ 3 และ 4 ทั้ง 3 วิชา และจัดข้อสอบเพื่อนำส่งห้องเรียนแต่ละห้อง')">
+          <img loading="lazy" decoding="async" src="images/img_0212.jpg" alt="จัดเตรียมข้อสอบ PISA 3" onclick="openLightbox(this.src,'จัดเตรียมข้อสอบ PISA ของนักเรียนชั้นมัธยมศึกษาปีที่ 3 และ 4 ทั้ง 3 วิชา และจัดข้อสอบเพื่อนำส่งห้องเรียนแต่ละห้อง')">
+          <img loading="lazy" decoding="async" src="images/img_0213.jpg" alt="จัดเตรียมข้อสอบ PISA 4" onclick="openLightbox(this.src,'จัดเตรียมข้อสอบ PISA ของนักเรียนชั้นมัธยมศึกษาปีที่ 3 และ 4 ทั้ง 3 วิชา และจัดข้อสอบเพื่อนำส่งห้องเรียนแต่ละห้อง')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+          </div>
+          <div class="wc-count">4 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">การปฏิบัติงานอื่น ๆ ในโรงเรียน</span>
+          <div class="work-title">จัดเตรียมข้อสอบ PISA</div>
+          <div class="work-desc">จัดเตรียมข้อสอบ PISA ของนักเรียนชั้นมัธยมศึกษาปีที่ 3 และ 4 ทั้ง 3 วิชา และจัดข้อสอบเพื่อนำส่งห้องเรียนแต่ละห้อง</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0214.jpg" alt="บันทึกข้อมูลนักเรียนและผู้ปกครองเข้าสู่ระบบ 1" onclick="openLightbox(this.src,'บันทึกข้อมูลนักเรียน ข้อมูลผู้ปกครองเข้าสู่ระบบ')">
+          <img loading="lazy" decoding="async" src="images/img_0215.jpg" alt="บันทึกข้อมูลนักเรียนและผู้ปกครองเข้าสู่ระบบ 2" onclick="openLightbox(this.src,'บันทึกข้อมูลนักเรียน ข้อมูลผู้ปกครองเข้าสู่ระบบ')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">การปฏิบัติงานอื่น ๆ ในโรงเรียน</span>
+          <div class="work-title">บันทึกข้อมูลนักเรียนและผู้ปกครองเข้าสู่ระบบ</div>
+          <div class="work-desc">บันทึกข้อมูลนักเรียน ข้อมูลผู้ปกครองเข้าสู่ระบบ</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMMUNITY ================= -->
+<section class="section" id="community">
+  <div class="section-blob" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">ตอนที่ 4 · Community Voluntary Work</div>
+      <h2 class="section-title">การเข้าถึงชุมชนและการมีจิตสาธารณะ</h2>
+      <p class="section-sub">กิจกรรมจิตอาสาและการทำงานร่วมกับชุมชน ทั้งด้านการศึกษา สิ่งแวดล้อม และวัฒนธรรม</p>
+    </div>
+    <div class="work-grid reveal">
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0216.jpg" alt="แปลงเกษตรผักสวนครัว โรงเรียนวัดดอนสัก 1" onclick="openLightbox(this.src,'จัดทำแปลงเกษตรสำหรับปลูกผักสวนครัวให้กับโรงเรียนวัดดอนสัก ตำบลฝายหลวง อำเภอลับแล จังหวัดอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0217.jpg" alt="แปลงเกษตรผักสวนครัว โรงเรียนวัดดอนสัก 2" onclick="openLightbox(this.src,'จัดทำแปลงเกษตรสำหรับปลูกผักสวนครัวให้กับโรงเรียนวัดดอนสัก ตำบลฝายหลวง อำเภอลับแล จังหวัดอุตรดิตถ์')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานพัฒนาชุมชน</span>
+          <div class="work-title">แปลงเกษตรผักสวนครัว โรงเรียนวัดดอนสัก</div>
+          <div class="work-desc">จัดทำแปลงเกษตรสำหรับปลูกผักสวนครัวให้กับโรงเรียนวัดดอนสัก ตำบลฝายหลวง อำเภอลับแล จังหวัดอุตรดิตถ์</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0218.jpg" alt="ทำบุญตักบาตรในวันสำคัญ 1" onclick="openLightbox(this.src,'ร่วมกิจกรรมทำบุญตักบาตรในวันสำคัญ')">
+          <img loading="lazy" decoding="async" src="images/img_0219.jpg" alt="ทำบุญตักบาตรในวันสำคัญ 2" onclick="openLightbox(this.src,'ร่วมกิจกรรมทำบุญตักบาตรในวันสำคัญ')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานพัฒนาชุมชน</span>
+          <div class="work-title">ทำบุญตักบาตรในวันสำคัญ</div>
+          <div class="work-desc">ร่วมกิจกรรมทำบุญตักบาตรในวันสำคัญ</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0220.jpg" alt="วางพวงมาลาวันปิยมหาราช 1" onclick="openLightbox(this.src,'ร่วมพิธีวางพวงมาลาในวันปิยมหาราช')">
+          <img loading="lazy" decoding="async" src="images/img_0221.jpg" alt="วางพวงมาลาวันปิยมหาราช 2" onclick="openLightbox(this.src,'ร่วมพิธีวางพวงมาลาในวันปิยมหาราช')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานพัฒนาชุมชน</span>
+          <div class="work-title">วางพวงมาลาวันปิยมหาราช</div>
+          <div class="work-desc">ร่วมพิธีวางพวงมาลาในวันปิยมหาราช</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0222.jpg" alt="จุดการเรียนรู้ตามหลัก BBL 1" onclick="openLightbox(this.src,'จัดทำจุดการเรียนรู้ตามหลัก BBL ให้กับโรงเรียนชุมชนผาเลือดวิทยาคาร ตำบลผาเลือด อำเภอท่าปลา จังหวัดอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0223.jpg" alt="จุดการเรียนรู้ตามหลัก BBL 2" onclick="openLightbox(this.src,'จัดทำจุดการเรียนรู้ตามหลัก BBL ให้กับโรงเรียนชุมชนผาเลือดวิทยาคาร ตำบลผาเลือด อำเภอท่าปลา จังหวัดอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0224.jpg" alt="จุดการเรียนรู้ตามหลัก BBL 3" onclick="openLightbox(this.src,'จัดทำจุดการเรียนรู้ตามหลัก BBL ให้กับโรงเรียนชุมชนผาเลือดวิทยาคาร ตำบลผาเลือด อำเภอท่าปลา จังหวัดอุตรดิตถ์')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+          </div>
+          <div class="wc-count">3 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานพัฒนาชุมชน</span>
+          <div class="work-title">จุดการเรียนรู้ตามหลัก BBL</div>
+          <div class="work-desc">จัดทำจุดการเรียนรู้ตามหลัก BBL ให้กับโรงเรียนชุมชนผาเลือดวิทยาคาร ตำบลผาเลือด อำเภอท่าปลา จังหวัดอุตรดิตถ์</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0225.jpg" alt="กิจกรรมเสริมสร้างความรู้ภาษาไทย 1" onclick="openLightbox(this.src,'จัดกิจกรรมเสริมสร้างความรู้เกี่ยวกับภาษาไทย ณ โรงเรียนสาธิตมหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0226.jpg" alt="กิจกรรมเสริมสร้างความรู้ภาษาไทย 2" onclick="openLightbox(this.src,'จัดกิจกรรมเสริมสร้างความรู้เกี่ยวกับภาษาไทย ณ โรงเรียนสาธิตมหาวิทยาลัยราชภัฏอุตรดิตถ์')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานด้านวิชาการ</span>
+          <div class="work-title">กิจกรรมเสริมสร้างความรู้ภาษาไทย</div>
+          <div class="work-desc">จัดกิจกรรมเสริมสร้างความรู้เกี่ยวกับภาษาไทย ณ โรงเรียนสาธิตมหาวิทยาลัยราชภัฏอุตรดิตถ์</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0227.jpg" alt="หัวหน้าทีมโครงการปลูกจิต คิดสะอาด 1" onclick="openLightbox(this.src,'เป็นหัวหน้าทีมจัดโครงการปลูกจิต คิดสะอาด ร่วมวาดโรงเรียนสีเขียว ณ โรงเรียนเทศบาลท่าอิฐ ตำบลท่าอิฐ อำเภอเมือง จังหวัดอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0228.jpg" alt="หัวหน้าทีมโครงการปลูกจิต คิดสะอาด 2" onclick="openLightbox(this.src,'เป็นหัวหน้าทีมจัดโครงการปลูกจิต คิดสะอาด ร่วมวาดโรงเรียนสีเขียว ณ โรงเรียนเทศบาลท่าอิฐ ตำบลท่าอิฐ อำเภอเมือง จังหวัดอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0229.jpg" alt="หัวหน้าทีมโครงการปลูกจิต คิดสะอาด 3" onclick="openLightbox(this.src,'เป็นหัวหน้าทีมจัดโครงการปลูกจิต คิดสะอาด ร่วมวาดโรงเรียนสีเขียว ณ โรงเรียนเทศบาลท่าอิฐ ตำบลท่าอิฐ อำเภอเมือง จังหวัดอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0230.jpg" alt="หัวหน้าทีมโครงการปลูกจิต คิดสะอาด 4" onclick="openLightbox(this.src,'เป็นหัวหน้าทีมจัดโครงการปลูกจิต คิดสะอาด ร่วมวาดโรงเรียนสีเขียว ณ โรงเรียนเทศบาลท่าอิฐ ตำบลท่าอิฐ อำเภอเมือง จังหวัดอุตรดิตถ์')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,2)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,3)"></span>
+          </div>
+          <div class="wc-count">4 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานพัฒนาชุมชน</span>
+          <div class="work-title">หัวหน้าทีมโครงการปลูกจิต คิดสะอาด</div>
+          <div class="work-desc">เป็นหัวหน้าทีมจัดโครงการปลูกจิต คิดสะอาด ร่วมวาดโรงเรียนสีเขียว ณ โรงเรียนเทศบาลท่าอิฐ ตำบลท่าอิฐ อำเภอเมือง จังหวัดอุตรดิตถ์</div>
+        </div>
+      </div>
+      <div class="work-card tilt-3d">
+        <div class="work-carousel">
+          <img loading="lazy" decoding="async" class="active" src="images/img_0231.jpg" alt="รณรงค์ขับขี่ปลอดภัย จังหวัดอุตรดิตถ์ 1" onclick="openLightbox(this.src,'เข้าร่วมการรณรงค์ขับขี่ปลอดภัยของจังหวัดอุตรดิตถ์')">
+          <img loading="lazy" decoding="async" src="images/img_0232.jpg" alt="รณรงค์ขับขี่ปลอดภัย จังหวัดอุตรดิตถ์ 2" onclick="openLightbox(this.src,'เข้าร่วมการรณรงค์ขับขี่ปลอดภัยของจังหวัดอุตรดิตถ์')">
+          <button class="wc-btn wc-prev" onclick="event.stopPropagation();wcNav(this,-1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="wc-btn wc-next" onclick="event.stopPropagation();wcNav(this,1)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="wc-dots">
+            <span class="wc-dot active" onclick="event.stopPropagation();wcGoTo(this,0)"></span>
+            <span class="wc-dot" onclick="event.stopPropagation();wcGoTo(this,1)"></span>
+          </div>
+          <div class="wc-count">2 รูป</div>
+        </div>
+        <div class="work-body">
+          <span class="work-date">งานพัฒนาชุมชน</span>
+          <div class="work-title">รณรงค์ขับขี่ปลอดภัย จังหวัดอุตรดิตถ์</div>
+          <div class="work-desc">เข้าร่วมการรณรงค์ขับขี่ปลอดภัยของจังหวัดอุตรดิตถ์</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT / FOOTER ================= -->
+<footer class="footer" id="contact">
+  <div class="wrap footer-grid">
+    <div class="reveal">
+      <div class="eyebrow" style="color:var(--teal);">Get in touch</div>
+      <h2 style="margin-top:12px;">สนใจร่วมงาน / ต้องการข้อมูลเพิ่มเติม<br>ติดต่อได้ทุกช่องทาง</h2>
+      <p class="lead">ยินดีให้ข้อมูลเพิ่มเติมเกี่ยวกับผลงานและประสบการณ์การสอน</p>
+      <div class="footer-contacts">
+        <a href="tel:0979904608">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"/></svg>
+          097-990-4608
+        </a>
+        <a href="mailto:suttirak.mc@gmail.com">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4zm16 12V8.24l-8 6.99-8-6.99V18h16z"/></svg>
+          suttirak.mc@gmail.com
+        </a>
+        <a href="#">
+          <svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 5.6 3 10c0 2.9 1.9 5.5 4.7 6.9-.1.9-.5 2.4-1.5 4 0 0 2.4-.4 4.6-2.1.4 0 .8.1 1.2.1 5 0 9-3.6 9-8s-4-8.9-9-8.9z"/></svg>
+          Line ID: tuastr
+        </a>
+      </div>
+    </div>
+    <div class="footer-card tilt-3d reveal">
+      <div class="lbl">สรุปคุณวุฒิโดยย่อ</div>
+      <table>
+        <tr><td>วุฒิการศึกษา</td><td>ครุศาสตรบัณฑิต (ภาษาไทย)</td></tr>
+        <tr><td>สถาบัน</td><td>มหาวิทยาลัยราชภัฏอุตรดิตถ์</td></tr>
+        <tr><td>เกรดเฉลี่ย</td><td>3.80 · เกียรตินิยมอันดับ 1</td></tr>
+        <tr><td>ใบอนุญาตประกอบวิชาชีพครู</td><td>คุรุสภา (ถึง 7 มิ.ย. 2570)</td></tr>
+        <tr><td>ภาษาอังกฤษ</td><td>CEFR ระดับ B1</td></tr>
+        <tr><td>ที่อยู่</td><td>อ.สวรรคโลก จ.สุโขทัย</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <div>© 2569 สุทธิรักษ์ ศรีดำ — แฟ้มสะสมผลงาน (Portfolio)</div>
+    <div>จัดทำจากเอกสารแฟ้มสะสมผลงานต้นฉบับ</div>
+  </div>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-cap" id="lightboxCap"></div>
+</div>
+
+<script>
+  // Nav scroll state
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ===== Scroll progress bar =====
+  const scrollProgress = document.getElementById('scrollProgress');
+  let progressTicking = false;
+  function updateScrollProgress() {
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const height = h.scrollHeight - h.clientHeight;
+    const pct = height > 0 ? (scrolled / height) * 100 : 0;
+    scrollProgress.style.width = pct + '%';
+    progressTicking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!progressTicking) {
+      requestAnimationFrame(updateScrollProgress);
+      progressTicking = true;
+    }
+  });
+  updateScrollProgress();
+
+  // ===== Nav scrollspy =====
+  const spySections = ['about','education','training','achievements','leadership','teaching','community','contact']
+    .map(id => document.getElementById(id)).filter(Boolean);
+  const spyLinks = [...navLinks.querySelectorAll('a')];
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        spyLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  spySections.forEach(s => spyObserver.observe(s));
+
+  // ===== Hero portrait subtle cursor parallax =====
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+  if (!reduceMotion && !isCoarsePointer) {
+    const heroPortrait = document.querySelector('.hero-portrait');
+    const heroSection = document.getElementById('top');
+    if (heroPortrait && heroSection) {
+      heroSection.addEventListener('mousemove', (e) => {
+        const r = heroSection.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        heroPortrait.style.transform = `perspective(1000px) rotateY(${px * 6}deg) rotateX(${-py * 5}deg)`;
+      });
+      heroSection.addEventListener('mouseleave', () => {
+        heroPortrait.style.transform = '';
+      });
+    }
+  }
+
+  // Lightbox
+  function openLightbox(src, caption) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCap').textContent = caption || '';
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(e) {
+    if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close') || e.target.tagName === 'BUTTON') {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; } });
+
+  // Gallery filter tabs
+  const tabs = document.querySelectorAll('.gal-tab');
+  const items = document.querySelectorAll('#training .work-card');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const f = tab.dataset.filter;
+      items.forEach(it => {
+        it.classList.toggle('hidden', f !== 'all' && it.dataset.cat !== f);
+      });
+    });
+  });
+
+  // Work card image carousels
+  function wcNav(btn, dir) {
+    const carousel = btn.closest('.work-carousel');
+    const imgs = [...carousel.querySelectorAll('img')];
+    const dots = [...carousel.querySelectorAll('.wc-dot')];
+    let idx = imgs.findIndex(i => i.classList.contains('active'));
+    imgs[idx].classList.remove('active');
+    if (dots.length) dots[idx].classList.remove('active');
+    idx = (idx + dir + imgs.length) % imgs.length;
+    imgs[idx].classList.add('active');
+    if (dots.length) dots[idx].classList.add('active');
+  }
+  function wcGoTo(dot, idx) {
+    const carousel = dot.closest('.work-carousel');
+    const imgs = carousel.querySelectorAll('img');
+    const dots = carousel.querySelectorAll('.wc-dot');
+    imgs.forEach(i => i.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    imgs[idx].classList.add('active');
+    dots[idx].classList.add('active');
+  }
+
+  // Practicum accordion
+  document.querySelectorAll('.prac-head').forEach(head => {
+    head.addEventListener('click', () => {
+      head.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+
+
+<script>
+(function(){
+  function addHint(el){
+    if(!el || el.querySelector(':scope > .tap-hint')) return;
+    var hint=document.createElement('span');
+    hint.className='tap-hint';
+    hint.textContent='กดเพื่อดูรูปภาพ';
+    el.appendChild(hint);
+  }
+  function initImageHints(){
+    document.querySelectorAll('.work-carousel, .doc-card').forEach(addHint);
+
+    document.querySelectorAll('.prac-photos img[onclick*="openLightbox"]').forEach(function(img){
+      if(img.parentElement && img.parentElement.classList.contains('tap-image-wrap')) return;
+      var wrap=document.createElement('div');
+      wrap.className='tap-image-wrap';
+      img.parentNode.insertBefore(wrap,img);
+      wrap.appendChild(img);
+      addHint(wrap);
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initImageHints);
+  else initImageHints();
+})();
+</script>
+
+<script id="mobile-image-reliability-js">
+(function () {
+  if (!window.matchMedia || !window.matchMedia('(max-width: 880px)').matches) return;
+
+  const imgs = Array.from(document.querySelectorAll('img[loading="lazy"]'));
+  if (!imgs.length) return;
+
+  // Ask the browser to decode images shortly before they enter view.
+  const preload = (img) => {
+    if (img.dataset.mobilePrepared === '1') return;
+    img.dataset.mobilePrepared = '1';
+    const src = img.currentSrc || img.getAttribute('src');
+    if (!src) return;
+    if (img.complete) return;
+    const warm = new Image();
+    warm.decoding = 'async';
+    warm.src = src;
+  };
+
+  if ('IntersectionObserver' in window) {
+    const preloader = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          preload(entry.target);
+          preloader.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '600px 0px', threshold: 0.01 });
+    imgs.forEach(img => preloader.observe(img));
+  } else {
+    // Fallback for older mobile browsers: prepare images in small batches.
+    let i = 0;
+    const step = () => {
+      for (let n = 0; n < 8 && i < imgs.length; n++, i++) preload(imgs[i]);
+      if (i < imgs.length) setTimeout(step, 350);
+    };
+    step();
+  }
+})();
+</script>
+
+
+<script id="mobile-training-school-activity-image-fix-js">
+(function () {
+  if (!window.matchMedia || !window.matchMedia('(max-width: 880px)').matches) return;
+
+  const headings = Array.from(document.querySelectorAll('h2, h3, .section-title'));
+  const targets = headings.filter(h => {
+    const t = (h.textContent || '').replace(/\s+/g, ' ').trim();
+    return /การอบรมและการพัฒนาวิชาชีพ|การจัดกิจกรรมและการเข้าร่วมกิจกรรมของโรงเรียน/.test(t);
+  });
+
+  const revealImages = (section) => {
+    if (!section) return;
+    const cards = section.querySelectorAll('.work-card, .doc-card, .role-card, .card');
+    cards.forEach(card => {
+      const imgs = card.querySelectorAll('img');
+      imgs.forEach(img => {
+        img.setAttribute('loading', 'lazy');
+        img.setAttribute('decoding', 'async');
+        // If the image has a valid source, trigger a browser decode when possible.
+        if (img.currentSrc || img.getAttribute('src')) {
+          const p = img.decode ? img.decode() : Promise.resolve();
+          Promise.resolve(p).catch(() => {});
+        }
+      });
+    });
+  };
+
+  // Find the section container from each matching heading.
+  targets.forEach(h => {
+    let section = h.closest('section, .section, .container');
+    if (!section) section = h.parentElement;
+    revealImages(section);
+  });
+
+  // Extra fallback: whenever a matching section enters view, prepare all of its cards.
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          revealImages(e.target);
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '900px 0px', threshold: 0.01 });
+
+    targets.forEach(h => {
+      let section = h.closest('section, .section, .container');
+      if (!section) section = h.parentElement;
+      if (section) io.observe(section);
+    });
+  }
+})();
+</script>
+
+
+<script id="mobile-gallery-reveal-final-fix-js">
+(function () {
+  function activateAffectedGalleries() {
+    if (!window.matchMedia || !window.matchMedia('(max-width: 880px)').matches) return;
+
+    const training = document.getElementById('training');
+    if (!training) return;
+
+    const grids = new Set();
+
+    // All gallery grids in the training section, including the school-activity
+    // gallery that follows #schoolactivities.
+    training.querySelectorAll('.work-grid').forEach(grid => grids.add(grid));
+
+    const schoolHeading = document.getElementById('schoolactivities');
+    if (schoolHeading) {
+      let grid = schoolHeading.nextElementSibling;
+      while (grid) {
+        if (grid.classList && grid.classList.contains('work-grid')) {
+          grids.add(grid);
+          break;
+        }
+        grid = grid.nextElementSibling;
+      }
+    }
+
+    grids.forEach(grid => {
+      // This is the missing state in the screenshot: make sure the gallery
+      // receives the same final reveal state as it does on desktop.
+      grid.classList.add('in');
+
+      // Ensure the first carousel image remains the active image.
+      grid.querySelectorAll('.work-carousel').forEach(carousel => {
+        const imgs = Array.from(carousel.querySelectorAll('img'));
+        if (!imgs.length) return;
+
+        let active = carousel.querySelector('img.active');
+        if (!active) {
+          active = imgs[0];
+          active.classList.add('active');
+        }
+
+        // Let the browser decode the visible image immediately.
+        active.setAttribute('loading', 'eager');
+        active.setAttribute('decoding', 'async');
+        if (active.decode) active.decode().catch(function(){});
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', activateAffectedGalleries);
+  } else {
+    activateAffectedGalleries();
+  }
+
+  window.addEventListener('pageshow', activateAffectedGalleries);
+  window.addEventListener('resize', activateAffectedGalleries, { passive: true });
+})();
+</script>
+
+</body>
+</html>
